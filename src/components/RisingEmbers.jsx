@@ -10,11 +10,11 @@ export default function RisingEmbers({ count = 26 }) {
     return Array.from({ length: count }).map((_, i) => ({
       id: i,
       left: Math.random() * 100,            // % across the hero
-      size: 3 + Math.random() * 5,           // px
-      duration: 9 + Math.random() * 10,      // seconds to rise
+      size: 8 + Math.random() * 5,           // px
+      duration: 5 + Math.random() * 10,      // seconds to rise
       delay: -(Math.random() * 18),          // negative = already mid-flight on load
       drift: (Math.random() - 0.5) * 60,     // px of horizontal sway
-      opacity: 0.4 + Math.random() * 0.5,
+      opacity: 0.2 + Math.random() * 0.5,
     }));
   }, [count]);
 

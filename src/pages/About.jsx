@@ -1,6 +1,7 @@
 import GlowLayer from "../components/GlowLayer.jsx";
 import useReveal from "../hooks/useReveal.js";
 import idolsSide from "../assets/img/idols-side.jpg";
+import RisingEmbers from "../components/RisingEmbers.jsx";
 
 export default function About() {
   useReveal();
@@ -8,17 +9,16 @@ export default function About() {
     <>
       <header className="page-header">
         <GlowLayer />
+          <RisingEmbers count={35} />
         <span className="kicker">Who We Are</span>
         <h1>About Ankur</h1>
         <h1 className="headline font-bangla">আমাদের কথা</h1>
         <p>
-          Ankur — meaning "sprout" — is the Bengali Association of South Carolina, a
-          volunteer-run community keeping Bengali language, festivals, and culture
-          alive for families across the Midlands.
+          Ankur — meaning "sprout" — is the Bengali Association of South Carolina
         </p>
       </header>
 
-      <section className="section">
+      <section className="section dark-text">
         <span className="kicker">Our Story</span>
         <h2 className="dark-text">A Community Built by Its Members</h2>
         <p className="lead">

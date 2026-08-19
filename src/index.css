@@ -6,6 +6,8 @@
   --gold-glow:#fcd34d;
   --mahogany:#33190f;
   --cream:#fdf3e2;
+  --ink-light: #4a2c1c;
+  --cream-text: #f1dcc2;
   --font-display:'Playfair Display','Georgia',serif;
   --font-body:'Inter','Helvetica Neue',Arial,sans-serif;
   --font-bangla:'Noto Serif Bengali','Tiro Bangla',serif;
@@ -66,14 +68,20 @@ button{font-family:inherit;}
   animation-timing-function:linear;
   animation-iteration-count:infinite;
 }
-@keyframes emberRise{
+/* @keyframes emberRise{
   0%{ transform:translate(0,0) scale(.6); opacity:0; }
   8%{ opacity:var(--peak-opacity,.7); }
   50%{ transform:translate(var(--drift,20px), -50vh) scale(1); }
   92%{ opacity:var(--peak-opacity,.7); }
   100%{ transform:translate(calc(var(--drift,20px) * 2), -100vh) scale(.8); opacity:0; }
+} */
+@keyframes emberRise{
+  0%{ bottom:-20px; transform:translateX(0) scale(.6); opacity:0; }
+  8%{ opacity:var(--peak-opacity,.7); }
+  50%{ bottom:50%; transform:translateX(var(--drift,20px)) scale(1); }
+  92%{ opacity:var(--peak-opacity,.7); }
+  100%{ bottom:110%; transform:translateX(calc(var(--drift,20px) * 2)) scale(.8); opacity:0; }
 }
-
 /* ---------------- Nav ---------------- */
 .site-nav{
   position:sticky; top:0; z-index:100;
@@ -141,7 +149,7 @@ button{font-family:inherit;}
   font-family:var(--font-bangla);
   line-height:1.25; /* Bengali vowel signs/conjuncts need more vertical room than Latin */
 }
-.sub{ max-width:520px; font-size:16px; color:#f1dcc2; margin-bottom:26px; line-height:1.55; }
+.sub{ max-width:720px; font-size:16px; color:#f1dcc2; margin-bottom:26px; line-height:1.55; }
 .cta-row{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-bottom:6px; }
 .btn{
   padding:13px 28px; border-radius:30px; font-size:14px; letter-spacing:.03em;
@@ -149,10 +157,10 @@ button{font-family:inherit;}
   transition:transform .2s ease, box-shadow .2s ease; display:inline-block;
 }
 .btn:hover{ transform:translateY(-2px); }
-.btn-primary{ background:linear-gradient(90deg,var(--vermillion),var(--amber)); color:#2a1206; font-weight:700; box-shadow:0 8px 24px rgba(230,100,30,.35); }
+.btn-primary{ background:linear-gradient(90deg,var(--orange),var(--cream)); color:#2a1206; font-weight:700; box-shadow:0 8px 24px rgba(230,100,30,.35); }
 .btn-ghost{ border-color:rgba(252,211,77,.5); color:var(--gold-glow); background:transparent; }
 
-.hero-photo-wrap{ position:relative; width:min(600px,84vw); margin:8px 0 2px; }
+.hero-photo-wrap{ position:relative; width:min(840px,92vw); margin:8px 0 2px; }
 .hero-photo{
   width:100%; display:block;
   -webkit-mask-image:radial-gradient(ellipse 62% 58% at center, black 50%, transparent 100%);
@@ -160,8 +168,8 @@ button{font-family:inherit;}
   filter:saturate(1.06) contrast(1.03);
 }
 .hero-photo-accent{
-  position:absolute; width:108px; height:108px; border-radius:50%;
-  object-fit:cover; bottom:-20px; right:2%;
+  position:absolute; width:240px; height:240px; border-radius:50%;
+  object-fit:cover; bottom:-120px; right:0%;
   -webkit-mask-image:radial-gradient(circle, black 60%, transparent 100%);
   mask-image:radial-gradient(circle, black 60%, transparent 100%);
   box-shadow:0 0 0 2px rgba(252,211,77,.5), 0 0 26px 6px rgba(252,211,77,.4);
@@ -170,7 +178,7 @@ button{font-family:inherit;}
 @keyframes accentFloat{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-8px);} }
 
 .alpona-wrap{ position:relative; margin-top:0; z-index:2; }
-.scroll-cue{ margin-top:28px; font-size:11px; letter-spacing:.2em; color:rgba(255,255,255,.55); text-transform:uppercase; }
+.scroll-cue{ margin-top:28px; font-size:11px; letter-spacing:.2em; color:rgba(153, 23, 23, 0.55); text-transform:uppercase; }
 
 /* ---------------- LiveAlpona animation ---------------- */
 .alp-draw{ stroke-dasharray:300; stroke-dashoffset:300; animation:alpDraw 1.1s ease forwards, alpFade 6s ease-in-out infinite; }
@@ -195,16 +203,48 @@ button{font-family:inherit;}
 @keyframes orbit4{ from{ transform:rotate(0deg) translateX(150px) rotate(0deg);} to{ transform:rotate(360deg) translateX(150px) rotate(-360deg);} }
 @keyframes orbit5{ from{ transform:rotate(0deg) translateX(108px) rotate(0deg);} to{ transform:rotate(360deg) translateX(108px) rotate(-360deg);} }
 
+/* ================================================================
+   TEXT COLOR SYSTEM
+   Default = light background, dark text (var(--mahogany) family).
+   Add "light-text" to a .section to flip everything inside it to
+   dark-background colors automatically, via inheritance/descendant
+   selectors — never hardcode a second color class on the children.
+   ================================================================ */
+
 /* ---------------- Generic content sections ---------------- */
 .section{ position:relative; z-index:1; padding:90px 8% 100px; }
-.section.tight{ padding-top:60px; padding-bottom:70px; }
-.kicker{ text-transform:uppercase; letter-spacing:.18em; font-size:11px; display:inline-block; margin-bottom:10px; color:var(--vermillion); }
-.section h2{ font-family:var(--font-display); font-size:32px; margin:0 0 8px; }
 .dark-text{ color:var(--mahogany); }
 .light-text{ color:var(--cream); }
-.section p.lead{ max-width:640px; font-size:15.5px; line-height:1.7; color:#4a2c1c; }
-.light-text.section p.lead{ color:#f1dcc2; }
 
+.kicker{ text-transform:uppercase; letter-spacing:.18em; font-size:11px; display:inline-block; margin-bottom:10px; color:var(--vermillion); }
+.light-text .kicker{ color:var(--gold-glow); }
+
+.section h2{ font-family:var(--font-display); font-size:32px; margin:0 0 8px; }
+/* no color rule needed — inherits from .dark-text / .light-text on the section */
+
+.section p.lead{ max-width:640px; font-size:15.5px; line-height:1.7; color:var(--ink-light); }
+.light-text.section p.lead{ color:var(--cream-text); }
+
+/* ---- spacing variants ---- */
+.section.tight{ padding-top:60px; padding-bottom:70px; }
+.section.loose{ padding-top:130px; padding-bottom:140px; }
+.section.flush-top{ padding-top:0; }
+
+/* ---- alignment variants ---- */
+.section.centered{ text-align:center; }
+.section.centered .lead{ margin-left:auto; margin-right:auto; }
+
+/* ---- width variants ---- */
+.section.narrow{ max-width:760px; margin:0 auto; }
+
+/* ---- background variants ---- */
+.section.bg-soft{ background:rgba(245,166,35,0.05); }
+.section.bg-card{ background:rgba(255,255,255,0.5); border-radius:14px; }
+
+/* ---- decorative accent ---- */
+.section.accent-top{ border-top:1px solid rgba(252,211,77,0.3); }
+
+/* ---------------- Card row (existing .card component) ---------------- */
 .card-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; margin-top:36px; }
 .card{
   background:rgba(255,255,255,.5); border:1px solid rgba(51,25,15,.12);
@@ -215,8 +255,8 @@ button{font-family:inherit;}
 .card:hover{ transform:translateY(-6px); box-shadow:0 16px 30px rgba(51,25,15,.18); }
 .card h3{ margin:0 0 8px; color:var(--crimson); font-family:var(--font-display); font-size:18px; }
 .card.on-dark h3{ color:var(--gold-glow); }
-.card p{ font-size:13.5px; color:#4a2c1c; line-height:1.55; margin:0; }
-.card.on-dark p{ color:#f1dcc2; }
+.card p{ font-size:13.5px; color:var(--ink-light); line-height:1.55; margin:0; }
+.card.on-dark p{ color:var(--cream-text); }
 .card .tag{ display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--vermillion); margin-bottom:8px; }
 .card.on-dark .tag{ color:var(--gold-glow); }
 .card.highlight{ border:1.5px solid var(--gold-glow); box-shadow:0 0 0 3px rgba(252,211,77,.15), 0 16px 30px rgba(51,25,15,.18); }
@@ -225,6 +265,8 @@ button{font-family:inherit;}
 .reveal.in{ opacity:1; transform:translateY(0); }
 
 /* ---------------- Gallery grid ---------------- */
+/* No light/dark variant needed — .cap has its own opaque dark gradient
+   background, same reasoning as .people-avatar below. */
 .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; margin-top:30px; }
 .gallery-grid.compact{ grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); }
 .gallery-item{
@@ -240,8 +282,125 @@ button{font-family:inherit;}
 }
 .gallery-item:hover .cap{ opacity:1; }
 
-/* ---------------- Community / people cards (illustrated placeholders) ---------------- */
+/* ---------------- People cards ---------------- */
 .people-card{
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+  padding:26px 18px; border-radius:16px;
+  background:rgba(255,255,255,.5); border:1px solid rgba(51,25,15,.12);
+}
+.light-text .people-card{ background:rgba(255,255,255,.06); border-color:rgba(252,211,77,.16); }
+
+.people-avatar{
+  width:76px; height:76px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--amber), var(--vermillion) 60%, var(--mahogany) 100%);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-size:26px; color:var(--cream);
+  box-shadow:0 0 0 3px rgba(252,211,77,.25);
+}
+/* no light/dark variant needed — own opaque gradient background, same as .gallery-item .cap */
+
+.people-card h4{ margin:0; font-family:var(--font-display); font-size:16px; color:var(--crimson); }
+.light-text .people-card h4{ color:var(--gold-glow); }
+
+.people-card p{ margin:0; font-size:12.5px; color:var(--ink-light); }
+.light-text .people-card p{ color:var(--cream-text); }
+
+/*---------------- Generic content sections ----------------
+.section{ position:relative; z-index:1; padding:90px 8% 100px; }
+.section.tight{ padding-top:60px; padding-bottom:70px; }
+.kicker{ text-transform:uppercase; letter-spacing:.18em; font-size:11px; display:inline-block; margin-bottom:10px; color:var(--vermillion); }
+.section h2{ font-family:var(--font-display); font-size:32px; margin:0 0 8px; }
+.dark-text{ color:var(--mahogany); }
+.light-text{ color:var(--cream); }
+.section p.lead{ max-width:640px; font-size:15.5px; line-height:1.7; color:#4a2c1c; }
+.light-text.section p.lead{ color:#f1dcc2; }
+
+/* ---- spacing variants ---- */
+/*.section.loose{ padding-top:130px; padding-bottom:140px; }   /* extra breathing room, e.g. a hero-adjacent intro */
+/*.section.flush-top{ padding-top:0; }                          /* when the section right above already has bottom padding */
+
+/* ---- alignment variants ---- */
+/*.section.centered{ text-align:center; }
+.section.centered .lead{ margin-left:auto; margin-right:auto; }  /* centered text needs a centered max-width block too */
+
+/* ---- width variants ---- */
+/*.section.narrow{ max-width:760px; margin:0 auto; }            /* whole section narrower, not just the lead paragraph */
+
+/* ---- background variants ---- */
+/*.section.bg-soft{ background:rgba(245,166,35,0.05); }         /* the faint amber wash you already use around your calendar section */
+/*.section.bg-card{ background:rgba(255,255,255,0.5); border-radius:14px; }
+
+/* ---- decorative accent, on-brand for this site ---- */
+/* .section.accent-top{ border-top:1px solid rgba(252,211,77,0.3); }  /* thin gold divider line above a section */
+/*.card-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; margin-top:36px; }
+.card{
+  background:rgba(255,255,255,.5); border:1px solid rgba(51,25,15,.12);
+  border-radius:14px; padding:22px; backdrop-filter:blur(2px);
+  transition:transform .25s ease, box-shadow .25s ease;
+} 
+.card.on-dark{ background:rgba(255,255,255,.06); border-color:rgba(252,211,77,.18); }
+.card:hover{ transform:translateY(-6px); box-shadow:0 16px 30px rgba(51,25,15,.18); }
+.card h3{ margin:0 0 8px; color:var(--crimson); font-family:var(--font-display); font-size:18px; }
+.card.on-dark h3{ color:var(--gold-glow); }
+.card p{ font-size:13.5px; color:#4a2c1c; line-height:1.55; margin:0; }
+.card.on-dark p{ color:#f1dcc2; }
+.card .tag{ display:inline-block; font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--vermillion); margin-bottom:8px; }
+.card.on-dark .tag{ color:var(--gold-glow); }
+.card.highlight{ border:1.5px solid var(--gold-glow); box-shadow:0 0 0 3px rgba(252,211,77,.15), 0 16px 30px rgba(51,25,15,.18); }
+
+.reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+/* ---------------- Gallery grid ---------------- */
+/* .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; margin-top:30px; }
+.gallery-grid.compact{ grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); }
+.gallery-item{
+  position:relative; overflow:hidden; border-radius:12px; aspect-ratio:4/3;
+  box-shadow:0 10px 24px rgba(51,25,15,.2);
+}
+.gallery-item img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.gallery-item:hover img{ transform:scale(1.08); }
+.gallery-item .cap{
+  position:absolute; left:0; right:0; bottom:0; padding:10px 12px;
+  background:linear-gradient(0deg,rgba(51,25,15,.85),transparent);
+  font-size:12px; color:var(--cream); opacity:0; transition:opacity .25s ease;
+}
+.gallery-item:hover .cap{ opacity:1; } */
+
+/* ---------------- Section-level text (kicker, h2, lead) ---------------- */
+/* .kicker{ text-transform:uppercase; letter-spacing:.18em; font-size:11px; display:inline-block; margin-bottom:10px; color:var(--vermillion); }
+.light-text .kicker{ color:var(--gold-glow); }   /* NEW — was missing a dark-section variant */
+
+/*.section h2{ font-family:var(--font-display); font-size:32px; margin:0 0 8px; }
+/* h2 needs no color rule of its own — it inherits from .dark-text / .light-text on the section, as we covered */
+
+/*.section p.lead{ max-width:640px; font-size:15.5px; line-height:1.7; color:#4a2c1c; }
+/*.light-text.section p.lead{ color:#f1dcc2; } 
+/* already correct — default = light-bg/dark-text, override = dark-bg/light-text */
+
+/* ---------------- People cards ---------------- */
+/* .people-card{
+  display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+  padding:26px 18px; border-radius:16px;
+  background:rgba(255,255,255,.5); border:1px solid rgba(51,25,15,.12);
+}
+.light-text .people-card{
+  background:rgba(255,255,255,.06); border-color:rgba(252,211,77,.16);
+}
+
+.people-card h4{ margin:0; font-family:var(--font-display); font-size:16px; color:var(--crimson); }
+.light-text .people-card h4{ color:var(--gold-glow); }
+
+.people-card p{ margin:0; font-size:12.5px; color:#4a2c1c; }
+.light-text .people-card p{ color:#f1dcc2; } */
+
+/* .people-avatar needs no changes — its own opaque gradient background
+   makes it background-independent already, on both light and dark sections */
+
+
+
+/* ---------------- Community / people cards (illustrated placeholders) ---------------- */
+/* .people-card{
   display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
   padding:26px 18px; border-radius:16px;
   background:rgba(255,255,255,.06); border:1px solid rgba(252,211,77,.16);
@@ -256,12 +415,19 @@ button{font-family:inherit;}
 .people-card h4{ margin:0; font-family:var(--font-display); font-size:16px; color:var(--gold-glow); }
 .people-card p{ margin:0; font-size:12.5px; color:#f1dcc2; }
 
+.people-card h4{ margin:0; font-family:var(--font-display); font-size:16px; color:var(--crimson); }
+.dark-text .people-card h4{ color:var(--crimson); }        /* explicit, for clarity — same as default */
+/* .light-text .people-card h4{ color:var(--gold-glow); }      /* dark section: switch to gold */
+
+/* .people-card p{ margin:0; font-size:12.5px; color:var(--ink-light); }
+.light-text .people-card p{ color:#f1dcc2; } */ 
+
 /* ---------------- Simple content page header ---------------- */
 .page-header{ position:relative; z-index:1; padding:80px 8% 40px; text-align:center; }
 .page-header--tall{ padding-top:160px; padding-bottom:100px; }
 .page-header .kicker{ color:var(--gold-glow); }
 .page-header h1{ font-family:var(--font-display); font-size:clamp(30px,5vw,46px); margin:0 0 10px; color:#fff8ea; }
-.page-header p{ max-width:560px; margin:0 auto; color:#f1dcc2; font-size:15px; line-height:1.6; }
+.page-header p{ max-width:1000px; margin:0 auto; color:#311c01; font-size:15px; line-height:1.6; }
 
 /* ---------------- Committee grid ---------------- */
 .committee-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:20px; margin-top:36px; }
@@ -271,6 +437,31 @@ button{font-family:inherit;}
 }
 .committee-card .role{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--vermillion); margin-bottom:6px; }
 .committee-card .name{ font-family:var(--font-display); font-size:16px; color:var(--mahogany); }
+
+.committee-photo-wrap{
+  width:96px; height:96px; border-radius:50%;
+  margin:0 auto 14px;
+  padding:3px;
+  background:conic-gradient(from 180deg,
+    var(--crimson), var(--vermillion), var(--orange),
+    var(--amber), var(--gold-glow), var(--crimson));
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 6px 16px rgba(51,25,15,.2);
+}
+.committee-photo{
+  width:100%; height:100%; border-radius:50%;
+  object-fit:cover; display:block;
+  border:3px solid var(--cream);   /* the gap that makes the gradient read as a ring, not a blob */
+}
+
+/* Placeholder version — for committee members without a photo yet */
+.committee-photo-placeholder{
+  width:100%; height:100%; border-radius:50%;
+  border:3px solid var(--cream);
+  background:var(--mahogany);
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-size:28px; color:var(--gold-glow);
+}
 
 /* ---------------- Form ---------------- */
 .contact-form{ display:grid; gap:16px; max-width:520px; margin-top:30px; }

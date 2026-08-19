@@ -19,7 +19,7 @@ export default function Nav() {
     <nav className="site-nav">
       <NavLink to="/" className="brand" onClick={() => setOpen(false)}>
         <span className="brand-mark">অ</span>
-        <span className="brand-name">Ankur</span>
+        <span className="brand-name">Ankur | অঙ্কুর</span>
       </NavLink>
 
       <ul className={`nav-menu ${open ? "open" : ""}`}>
