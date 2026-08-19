@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
       <div>
         <h5>Get in Touch</h5>
-        <p>info@ankursc.org</p>
+        <p>ankursc.12@gmail.com</p>
         <p>Columbia, South Carolina</p>
         <p><a href="/contact">Contact Us →</a></p>
       </div>

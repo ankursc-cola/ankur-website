@@ -34,7 +34,7 @@ export default function Sponsors() {
 
       {!hasRealSponsors && (
         <section className="section">
-          <div className="card-row reveal">
+          <div className="card-row">
             {TIERS.map((t) => (
               <div className="card" key={t.name}>
                 <span className="tag">Tier</span>
@@ -53,7 +53,7 @@ export default function Sponsors() {
           return (
             <section className="section" key={tierName}>
               <span className="kicker">{tierName} Sponsors</span>
-              <div className="card-row reveal">
+              <div className="card-row">
                 {inTier.map((s) => (
                   <div className="card" key={s._id}>
                     {s.logo && (

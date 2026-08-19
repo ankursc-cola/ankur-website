@@ -34,7 +34,13 @@ export default function About() {
         </div>
       </section>
 
-      <section className="section light-text">
+      <section className="section light-text" style={{ background: "var(--ink-light)" }}>
+          {/* NEW: gives this section its own dark background, since it's the
+      only one on the page meant to sit on dark instead of cream.
+      Keeping "card on-dark" as you originally had it — it was
+      correctly styled all along, just missing a dark backdrop to
+      actually sit on. */}
+
         <span className="kicker" style={{ color: "var(--gold-glow)" }}>What We Value</span>
         <h2>Mission &amp; Vision</h2>
         <div className="card-row reveal">

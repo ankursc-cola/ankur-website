@@ -217,6 +217,7 @@ button{font-family:inherit;}
 .light-text{ color:var(--cream); }
 
 .kicker{ text-transform:uppercase; letter-spacing:.18em; font-size:11px; display:inline-block; margin-bottom:10px; color:var(--vermillion); }
+
 .light-text .kicker{ color:var(--gold-glow); }
 
 .section h2{ font-family:var(--font-display); font-size:32px; margin:0 0 8px; }
