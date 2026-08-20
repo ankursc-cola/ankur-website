@@ -464,6 +464,36 @@ button{font-family:inherit;}
   font-family:var(--font-display); font-size:28px; color:var(--gold-glow);
 }
 
+/* Past Committe Members*/
+.past-empty { font-size: 13px; color: var(--vermillion); opacity: 0.85; padding: 12px 4px; font-style: italic; }
+.past-leadership { margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(51, 25, 15, 0.12); }
+.past-leadership-label { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--vermillion); margin-bottom: 12px; }
+
+.term-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+.term-tab {
+  font-size: 13px; padding: 6px 16px; border-radius: 999px;
+  border: 1px solid rgba(51, 25, 15, 0.2); background: transparent;
+  color: var(--mahogany); cursor: pointer; transition: all 0.2s ease;
+}
+.term-tab:hover { border-color: var(--vermillion); }
+.term-tab-active { background: var(--mahogany); color: var(--cream); border-color: var(--mahogany); }
+
+.past-list { margin-top: 20px; display: flex; flex-direction: column; gap: 2px; }
+.past-row {
+  display: flex; align-items: center; gap: 12px; padding: 10px 4px;
+  border-bottom: 1px solid rgba(51, 25, 15, 0.08);
+}
+.past-avatar, .past-avatar-placeholder {
+  width: 32px; height: 32px; border-radius: 50%; flex-shrink: 0; object-fit: cover;
+}
+.past-avatar-placeholder {
+  background: var(--mahogany); color: var(--gold-glow);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 13px;
+}
+.past-name { font-size: 14px; font-weight: 500; color: var(--mahogany); }
+.past-role { font-size: 13px; color: var(--vermillion); margin-left: auto; }
+
 /* ---------------- Form ---------------- */
 .contact-form{ display:grid; gap:16px; max-width:520px; margin-top:30px; }
 .contact-form input, .contact-form textarea{

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 # Ankur — Bengali Association of South Carolina
 
 React + Vite site. Palette, nav, hero (with LiveAlpona), and 8 routed pages
@@ -30,10 +29,4 @@ Outputs to `dist/`.
 - "Our Community" section on Home uses illustrated placeholder avatars, not photos (see chat notes)
 - About page history paragraph is placeholder copy
 =======
-# ankur-website
-A website for a Community
->>>>>>> 650e973bedd03a8f3208ead7fb8cb86ef27b7696
-=======
-# ankur-website
-This website is new React+Vite format dynamic with Sanity.io enabled. User can input data without touching the code 
->>>>>>> d2097d5bda09c32b80f47108c93202f663285295
+

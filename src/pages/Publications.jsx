@@ -20,7 +20,7 @@ export default function Publications() {
         <RisingEmbers count={35} />
         <span className="kicker">Read</span>
         <h1>Publications</h1>
-        <h1 className="headline font-bangla">শারদীয় সঞ্চয়</h1>
+        <h1 className="headline font-bangla">শারদীয়া সঙ্কলন</h1>
         <p>Our annual souvenir magazine and other community writing, past and present.</p>
       </header>
 

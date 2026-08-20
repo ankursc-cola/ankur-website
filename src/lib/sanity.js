@@ -50,7 +50,7 @@ async function safeFetch(query, params = {}) {
 
 export function fetchCommittee() {
   return safeFetch(
-    `*[_type == "committeeMember" && active == true] | order(order asc) {
+    `*[_type == "committeeMember" && active == true] | order(term desc, order asc) {
       _id, role, name, photo, order, term
     }`
   );
