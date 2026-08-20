@@ -91,7 +91,7 @@ export function fetchSponsors() {
 export function fetchEvents() {
   return safeFetch(
     `*[_type == "event"] | order(order asc) {
-      _id, name, nameBangla, dateText, blurb, featured
+      _id, name, nameBangla, dateText, blurb, featured, "flyerUrl": flyer.asset->url
     }`
   );
 }
@@ -99,7 +99,7 @@ export function fetchEvents() {
 export function fetchFeaturedEvent() {
   return safeFetch(
     `*[_type == "event" && featured == true][0] {
-      _id, name, nameBangla, dateText, blurb
+      _id, name, nameBangla, dateText, blurb, "flyerUrl": flyer.asset->url
     }`
   );
 }

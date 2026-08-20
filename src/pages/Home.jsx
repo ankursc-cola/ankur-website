@@ -67,13 +67,28 @@ export default function Home() {
           Ankur means sprout: a seed that refuses to forget where it came from.
         </p>
 
+
+
         <div className="cta-row">
           <Link to="/events" className="btn btn-primary">
             {featuredEvent.nameBangla ? `${featuredEvent.nameBangla} · ` : ""}
             {featuredEvent.name} · {featuredEvent.dateText}
           </Link>
-          <Link to="/events" className="btn btn-ghost">See All Events</Link>
+          
+            {featuredEvent.flyerUrl && (
+              <a
+                href={featuredEvent.flyerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-ghost"
+                style={{ borderColor: "var(--gold-glow)", color: "var(--gold-glow)" }}
+              >
+                Download Flyer
+              </a>
+            )}
+            <Link to="/events" className="btn btn-ghost">See All Events</Link>
         </div>
+
 
         <div className="hero-photo-wrap">
           <img className="hero-photo" src={durgaStage} alt="Sarbojanin Durgotsav, presented by Ankur, South Carolina" />

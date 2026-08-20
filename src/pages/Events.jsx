@@ -32,7 +32,7 @@ export default function Events() {
       <section className="section">
         <div className="card-row reveal">
           {events.map((e) => (
-            <div key={e._id} className={`card ${e.featured ? "highlight" : ""}`}>
+          <div key={e._id} className={`card ${e.featured ? "highlight" : ""}`}>
             <span className="tag">{e.dateText}</span>
             <h3>{e.name}</h3>
             {e.nameBangla && (
@@ -41,6 +41,19 @@ export default function Events() {
               </p>
             )}
             <p>{e.blurb}</p>
+            {e.flyerUrl && (
+              <p style={{ marginTop: 12 }}>
+                <a
+                  href={e.flyerUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost"
+                  style={{ borderColor: "var(--vermillion)", color: "var(--vermillion)" }}
+                >
+                  Download Flyer →
+                </a>
+              </p>
+            )}
           </div>
           ))}
         </div>
