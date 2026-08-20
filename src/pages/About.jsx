@@ -24,8 +24,7 @@ export default function About() {
         <p className="lead">
           From a handful of families gathering for Saraswati Puja to a full calendar of
           festivals culminating in our main Sarbojanin Durgotsav each October, Ankur has
-          grown into a home away from home for Bengali families in South Carolina —
-          replace this paragraph with your own history and founding story.
+          grown into a home away from home for Bengali families in South Carolina
         </p>
         <div className="gallery-grid compact reveal" style={{ marginTop: 40 }}>
           <div className="gallery-item">
