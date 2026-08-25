@@ -12,6 +12,11 @@ import idols1 from "../assets/img/idols-1.jpg";
 import idols2 from "../assets/img/idols-2.jpg";
 import ganeshClose from "../assets/img/ganesh-close.jpg";
 import pujaRitual from "../assets/img/puja-ritual.jpg";
+import HoliAlpona from "../components/HoliAlpona.jsx";
+import BoiAlpona from "../components/BoiAlpona.jsx";
+import NoboAlpona from "../components/NoboAlpona.jsx";
+
+
 
 // The hero's "Next Event" badge is the only thing on this page that's
 // dynamic (pulled from Sanity's featured event). If Sanity has no
@@ -20,6 +25,7 @@ const FALLBACK_FEATURED_EVENT = {
   name: "Durga Puja",
   nameBangla: "সার্বজনীন দুর্গোৎসব ২০২৬",
   dateText: "Oct 16–18 · 2026",
+  alponaStyle: "classic",
 };
 
 // The full yearly festival calendar is intentionally STATIC — it
@@ -44,6 +50,13 @@ const FALLBACK_GALLERY = [
   { _id: "g3", url: pujaRitual, caption: "Pujo in progress" },
   { _id: "g4", url: idols2, caption: "The full pandal" },
 ];
+
+const ALPONA_COMPONENTS = {
+  classic: LiveAlpona,
+  holi: HoliAlpona,
+  boi: BoiAlpona,
+  nobo: NoboAlpona,
+};
 
 export default function Home() {
   useReveal();
@@ -96,7 +109,10 @@ export default function Home() {
         </div>
 
         <div className="alpona-wrap">
-          <LiveAlpona size={320} />
+          {(() => {
+            const AlponaComponent = ALPONA_COMPONENTS[featuredEvent.alponaStyle] || LiveAlpona;
+            return <AlponaComponent size={320} />;
+          })()}
         </div>
 
         <div className="scroll-cue">↓ scroll</div>

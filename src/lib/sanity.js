@@ -99,7 +99,7 @@ export function fetchEvents() {
 export function fetchFeaturedEvent() {
   return safeFetch(
     `*[_type == "event" && featured == true][0] {
-      _id, name, nameBangla, dateText, blurb, "flyerUrl": flyer.asset->url
+      _id, name, nameBangla, dateText, blurb, "flyerUrl": flyer.asset->url, alponaStyle
     }`
   );
 }
