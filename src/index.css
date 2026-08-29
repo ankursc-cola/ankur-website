@@ -606,7 +606,7 @@ button{font-family:inherit;}
 }
  
 .pub-card {
-  width: 340px;
+  width: 480px;
   flex: 0 0 auto; /* never shrinks, never grows — fixed dimension always */
   box-sizing: border-box;
 }
@@ -639,7 +639,11 @@ button{font-family:inherit;}
   font-weight: 600;
 }
  
-.pub-title,
+.pub-title {
+  margin: 0;
+  max-width: 100%;
+}
+ 
 .pub-blurb {
   margin: 0;
   max-width: 100%;
@@ -658,4 +662,3 @@ button{font-family:inherit;}
   color: var(--vermillion);
   white-space: nowrap;
 }
- 
