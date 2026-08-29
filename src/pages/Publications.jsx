@@ -25,13 +25,15 @@ export default function Publications() {
       </header>
 
       <section className="section">
-        <div className="card-row reveal">
+        {/* pub-card-row instead of the shared card-row: this page needs cards
+            that never shrink, whereas card-row elsewhere is allowed to. */}
+        <div className="pub-card-row reveal">
           {issues.map((i) => (
-            <div className="card" key={i._id}>
+            <div className="card pub-card" key={i._id}>
               <div className="pub-row">
                 {i.coverImage && (
                   <img
-                    src={urlFor(i.coverImage).width(200).height(260).fit("crop").url()}
+                    src={urlFor(i.coverImage).width(220).height(285).fit("crop").url()}
                     alt={`${i.title} cover`}
                     className="pub-thumb"
                   />

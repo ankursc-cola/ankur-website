@@ -597,6 +597,21 @@ button{font-family:inherit;}
 
 /* Fix text wraping issue with Publication window*/ 
 
+
+ 
+.pub-card-row {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px; /* room for a scrollbar so it doesn't sit flush against the cards */
+  -webkit-overflow-scrolling: touch;
+}
+ 
+.pub-card {
+  width: 340px;
+  flex: 0 0 auto; /* never shrinks, never grows — fixed dimension always */
+  box-sizing: border-box;
+}
  
 .pub-row {
   display: flex;
@@ -605,9 +620,9 @@ button{font-family:inherit;}
 }
  
 .pub-thumb {
-  width: 140px;
+  width: 110px;
   flex-shrink: 0;
-  aspect-ratio: 200 / 260;
+  aspect-ratio: 8.5 / 11; /* fixed page ratio, matches a printed magazine cover */
   object-fit: cover;
   border-radius: 8px;
 }
@@ -618,7 +633,7 @@ button{font-family:inherit;}
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
-  min-width: 0; /* lets children truncate instead of forcing the flex item wider */
+  min-width: 0;
 }
  
 .pub-year {
@@ -644,17 +659,4 @@ button{font-family:inherit;}
   border-color: var(--vermillion);
   color: var(--vermillion);
   white-space: nowrap;
-}
- 
-/* Below this width, stack the thumbnail above the text instead of
-   beside it — gives the title/blurb the full card width to work with,
-   so they're far less likely to need truncating at all. */
-@media (max-width: 520px) {
-  .pub-row {
-    flex-direction: column;
-  }
-  .pub-thumb {
-    width: 100%;
-    max-width: 220px;
-  }
 }
