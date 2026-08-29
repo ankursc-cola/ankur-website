@@ -601,10 +601,8 @@ button{font-family:inherit;}
  
 .pub-card-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
-  overflow-x: auto;
-  padding-bottom: 4px; /* room for a scrollbar so it doesn't sit flush against the cards */
-  -webkit-overflow-scrolling: touch;
 }
  
 .pub-card {
@@ -660,3 +658,4 @@ button{font-family:inherit;}
   color: var(--vermillion);
   white-space: nowrap;
 }
+ 
