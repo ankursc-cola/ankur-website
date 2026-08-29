@@ -28,37 +28,46 @@ export default function Publications() {
         <div className="card-row reveal">
           {issues.map((i) => (
             <div className="card" key={i._id}>
-              {i.coverImage && (
-                <img
-                  src={urlFor(i.coverImage).width(200).height(260).fit("crop").url()}
-                  alt={`${i.title} cover`}
+              <div style={{ display: "flex", gap: 16, alignItems: "stretch" }}>
+                {i.coverImage && (
+                  <img
+                    src={urlFor(i.coverImage).width(200).height(260).fit("crop").url()}
+                    alt={`${i.title} cover`}
+                    style={{
+                      width: "140px",
+                      flexShrink: 0,
+                      aspectRatio: "200 / 260",
+                      objectFit: "cover",
+                      borderRadius: 8,
+                    }}
+                  />
+                )}
+                <div
                   style={{
-                    width: "140px",
-                    aspectRatio: "200 / 260",
-                    objectFit: "cover",
-                    borderRadius: 8,
-                    marginBottom: 12,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
                   }}
-                />
-              )}
-              <span className="tag" style={{ fontSize: "1.1rem", fontWeight: 600 }}>
-                {i.year}
-              </span>
-              <h3>{i.title}</h3>
+                >
+                  <span className="tag" style={{ fontSize: "2rem", fontWeight: 600 }}>
+                    {i.year}
+                  </span>
+                  {i.pdfUrl && (
+                    <a
+                      href={i.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-ghost"
+                      style={{ borderColor: "var(--vermillion)", color: "var(--vermillion)" }}
+                    >
+                      Read the PDF →
+                    </a>
+                  )}
+                </div>
+              </div>
+              <h3 style={{ marginTop: 16 }}>{i.title}</h3>
               <p style={{ fontSize: "1.15rem", lineHeight: 1.5 }}>{i.blurb}</p>
-              {i.pdfUrl && (
-                <p style={{ marginTop: 12 }}>
-                  <a
-                    href={i.pdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-ghost"
-                    style={{ borderColor: "var(--vermillion)", color: "var(--vermillion)" }}
-                  >
-                    Read the PDF →
-                  </a>
-                </p>
-              )}
             </div>
           ))}
         </div>
