@@ -7,7 +7,7 @@ export default function Footer() {
         <h5>Ankur</h5>
         <p>Bengali Association of South Carolina — a community keeping Bengal's festivals, food,
         language, and warmth alive in the Midlands.</p>
-        <img src={ankurLogo} alt="Ankur logo" className="brand-mark-logo" />
+        <img src={ankurLogo} alt="Ankur logo" className="brand-footer-logo" />
       </div>
       <div>
         <h5>Quick Links</h5>

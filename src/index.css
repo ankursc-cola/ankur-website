@@ -53,6 +53,15 @@ button{font-family:inherit;}
   object-fit: cover;
   flex-shrink: 0;
 }
+
+.brand-footer-logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 /* ---------------- Ambient glow layer ---------------- */
 .glow-layer{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
 .glow-blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.32; mix-blend-mode:screen; }
