@@ -63,7 +63,7 @@ export default function Sponsors() {
           if (inTier.length === 0) return null;
           return (
             <section className="section" key={tierName}>
-              <span className="kicker">{tierName} Sponsors</span>
+              <span className="kicker sponsor-tier-kicker">{tierName} Sponsors</span>
               <RectAlpona tier={tierName.toLowerCase()}>
                 <div className="card-row">
                   {inTier.map((s) => (

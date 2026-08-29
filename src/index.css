@@ -591,3 +591,6 @@ button{font-family:inherit;}
   color: var(--mahogany);
 }
  
+.sponsor-tier-kicker {
+  font-size: 1.1rem;
+}
