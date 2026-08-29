@@ -3,6 +3,7 @@ import useReveal from "../hooks/useReveal.js";
 import RisingEmbers from "../components/RisingEmbers.jsx";
 import useSanityData from "../hooks/useSanityData.js";
 import { fetchSponsors, urlFor } from "../lib/sanity.js";
+import RectAlpona from "../components/RectAlpona.jsx";
 
 // Shown when there are no real sponsors in Sanity yet — same
 // tier-description content as the original page, so this still looks
@@ -14,6 +15,16 @@ const TIERS = [
 ];
 
 const TIER_ORDER = ["Platinum", "Gold", "Silver"];
+
+function getInitials(name) {
+  return name
+    .split(" ")
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase();
+}
 
 export default function Sponsors() {
   useReveal();
@@ -53,28 +64,32 @@ export default function Sponsors() {
           return (
             <section className="section" key={tierName}>
               <span className="kicker">{tierName} Sponsors</span>
-              <div className="card-row">
-                {inTier.map((s) => (
-                  <div className="card" key={s._id}>
-                    {s.logo && (
-                      <img
-                        src={urlFor(s.logo).width(240).url()}
-                        alt={s.name}
-                        style={{ maxWidth: "100%", height: 60, objectFit: "contain", marginBottom: 12 }}
-                      />
-                    )}
-                    <h3>
-                      {s.website ? (
-                        <a href={s.website} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
-                          {s.name}
-                        </a>
+              <RectAlpona tier={tierName.toLowerCase()}>
+                <div className="card-row">
+                  {inTier.map((s) => (
+                    <div className="card" key={s._id}>
+                      {s.logo ? (
+                        <img
+                          src={urlFor(s.logo).width(240).url()}
+                          alt={s.name}
+                          style={{ maxWidth: "100%", height: 60, objectFit: "contain", marginBottom: 12 }}
+                        />
                       ) : (
-                        s.name
+                        <div className="sponsor-card-initials">{getInitials(s.name)}</div>
                       )}
-                    </h3>
-                  </div>
-                ))}
-              </div>
+                      <h3>
+                        {s.website ? (
+                          <a href={s.website} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+                            {s.name}
+                          </a>
+                        ) : (
+                          s.name
+                        )}
+                      </h3>
+                    </div>
+                  ))}
+                </div>
+              </RectAlpona>
             </section>
           );
         })}

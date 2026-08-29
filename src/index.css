@@ -516,3 +516,78 @@ button{font-family:inherit;}
 
 .contact-success { font-size: 15px; color: var(--vermillion); font-weight: 500; max-width: 480px; }
 .contact-error { font-size: 13px; color: var(--vermillion); margin-top: 10px; }
+
+
+.sponsor-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+ 
+.sponsor-tier-label {
+  font-family: "Spectral", serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--crimson);
+  margin-bottom: 1rem;
+}
+ 
+.dark-text .sponsor-tier-label {
+  color: var(--gold-glow);
+}
+ 
+.sponsor-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+ 
+.sponsor-card {
+  background: #fff;
+  border: 1px solid var(--amber);
+  border-radius: 10px;
+  padding: 14px 20px;
+  text-align: center;
+  min-width: 130px;
+}
+ 
+.sponsor-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+ 
+.sponsor-card-initials {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(245, 166, 35, 0.15);
+  margin: 0 auto 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Spectral", serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--crimson);
+}
+ 
+.sponsor-card-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  display: block;
+}
+ 
+.sponsor-card-name {
+  font-size: 12px;
+  color: var(--mahogany);
+}
+ 
+.dark-text .sponsor-card-name {
+  color: var(--mahogany);
+}
+ 
