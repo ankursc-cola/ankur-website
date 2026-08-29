@@ -1,3 +1,5 @@
+import ankurLogo from "../assets/ankur-logo.png";
+
 export default function Footer() {
   return (
     <footer className="site-footer">
@@ -5,6 +7,7 @@ export default function Footer() {
         <h5>Ankur</h5>
         <p>Bengali Association of South Carolina — a community keeping Bengal's festivals, food,
         language, and warmth alive in the Midlands.</p>
+        <img src={ankurLogo} alt="Ankur logo" className="brand-mark-logo" />
       </div>
       <div>
         <h5>Quick Links</h5>
