@@ -594,3 +594,67 @@ button{font-family:inherit;}
 .sponsor-tier-kicker {
   font-size: 1.1rem;
 }
+
+/* Fix text wraping issue with Publication window*/ 
+
+ 
+.pub-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+ 
+.pub-thumb {
+  width: 140px;
+  flex-shrink: 0;
+  aspect-ratio: 200 / 260;
+  object-fit: cover;
+  border-radius: 8px;
+}
+ 
+.pub-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0; /* lets children truncate instead of forcing the flex item wider */
+}
+ 
+.pub-year {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+ 
+.pub-title,
+.pub-blurb {
+  margin: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ 
+.pub-blurb {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+ 
+.pub-pdf-btn {
+  border-color: var(--vermillion);
+  color: var(--vermillion);
+  white-space: nowrap;
+}
+ 
+/* Below this width, stack the thumbnail above the text instead of
+   beside it — gives the title/blurb the full card width to work with,
+   so they're far less likely to need truncating at all. */
+@media (max-width: 520px) {
+  .pub-row {
+    flex-direction: column;
+  }
+  .pub-thumb {
+    width: 100%;
+    max-width: 220px;
+  }
+}

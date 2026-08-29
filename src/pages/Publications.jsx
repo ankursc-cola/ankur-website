@@ -28,41 +28,24 @@ export default function Publications() {
         <div className="card-row reveal">
           {issues.map((i) => (
             <div className="card" key={i._id}>
-              <div style={{ display: "flex", gap: 16, alignItems: "stretch" }}>
+              <div className="pub-row">
                 {i.coverImage && (
                   <img
                     src={urlFor(i.coverImage).width(200).height(260).fit("crop").url()}
                     alt={`${i.title} cover`}
-                    style={{
-                      width: "140px",
-                      flexShrink: 0,
-                      aspectRatio: "200 / 260",
-                      objectFit: "cover",
-                      borderRadius: 8,
-                    }}
+                    className="pub-thumb"
                   />
                 )}
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "flex-start",
-                    gap: 10,
-                  }}
-                >
-                  <span className="tag" style={{ fontSize: "1.4rem", fontWeight: 600 }}>
-                    {i.year}
-                  </span>
-                  <h3 style={{ margin: 0 }}>{i.title}</h3>
-                  <p style={{ margin: 0, fontSize: "1rem", lineHeight: 1.5 }}>{i.blurb}</p>
+                <div className="pub-side">
+                  <span className="tag pub-year">{i.year}</span>
+                  <h3 className="pub-title">{i.title}</h3>
+                  <p className="pub-blurb">{i.blurb}</p>
                   {i.pdfUrl && (
                     <a
                       href={i.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-ghost"
-                      style={{ borderColor: "var(--vermillion)", color: "var(--vermillion)" }}
+                      className="btn btn-ghost pub-pdf-btn"
                     >
                       Read the PDF →
                     </a>
