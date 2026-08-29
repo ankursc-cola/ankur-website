@@ -46,13 +46,16 @@ export default function Publications() {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-between",
+                    justifyContent: "center",
                     alignItems: "flex-start",
+                    gap: 10,
                   }}
                 >
-                  <span className="tag" style={{ fontSize: "2rem", fontWeight: 600 }}>
+                  <span className="tag" style={{ fontSize: "1.4rem", fontWeight: 600 }}>
                     {i.year}
                   </span>
+                  <h3 style={{ margin: 0 }}>{i.title}</h3>
+                  <p style={{ margin: 0, fontSize: "1rem", lineHeight: 1.5 }}>{i.blurb}</p>
                   {i.pdfUrl && (
                     <a
                       href={i.pdfUrl}
@@ -66,8 +69,6 @@ export default function Publications() {
                   )}
                 </div>
               </div>
-              <h3 style={{ marginTop: 16 }}>{i.title}</h3>
-              <p style={{ fontSize: "1.15rem", lineHeight: 1.5 }}>{i.blurb}</p>
             </div>
           ))}
         </div>
