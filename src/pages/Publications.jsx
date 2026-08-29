@@ -30,20 +30,22 @@ export default function Publications() {
             <div className="card" key={i._id}>
               {i.coverImage && (
                 <img
-                  src={urlFor(i.coverImage).width(400).height(520).fit("crop").url()}
+                  src={urlFor(i.coverImage).width(200).height(260).fit("crop").url()}
                   alt={`${i.title} cover`}
                   style={{
-                    width: "100%",
-                    aspectRatio: "400 / 520",
+                    width: "140px",
+                    aspectRatio: "200 / 260",
                     objectFit: "cover",
                     borderRadius: 8,
                     marginBottom: 12,
                   }}
                 />
               )}
-              <span className="tag">{i.year}</span>
+              <span className="tag" style={{ fontSize: "1.1rem", fontWeight: 600 }}>
+                {i.year}
+              </span>
               <h3>{i.title}</h3>
-              <p>{i.blurb}</p>
+              <p style={{ fontSize: "1.15rem", lineHeight: 1.5 }}>{i.blurb}</p>
               {i.pdfUrl && (
                 <p style={{ marginTop: 12 }}>
                   <a
