@@ -53,7 +53,7 @@ export default function Contact() {
           <form className="contact-form" onSubmit={handleSubmit}>
             <input type="text" name="name" placeholder="Your name" required />
             <input type="email" name="email" placeholder="Your email" required />
-            <textarea name="message" placeholder="Your message" required />
+            <textarea name="message" placeholder="Your message : Become a member | Join our community" required />
             <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
               {status === "sending" ? "Sending…" : "Send Message"}
             </button>

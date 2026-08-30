@@ -515,12 +515,20 @@ button{font-family:inherit;}
 .past-role { font-size: 13px; color: var(--vermillion); margin-left: auto; }
 
 /* ---------------- Form ---------------- */
-.contact-form{ display:grid; gap:16px; max-width:520px; margin-top:30px; }
+/* No max-width here on purpose — the form now fills the .section's
+   full content width (the section's own 8% side padding is what
+   controls the outer margin, same as every other page). Name/email
+   go side-by-side on wider screens so the extra width doesn't just
+   stretch a single column of inputs into oddly long bars. */
+.contact-form{ display:grid; gap:16px; width:100%; margin-top:30px; }
+.contact-form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width: 640px){ .contact-form-row{ grid-template-columns:1fr; } }
 .contact-form input, .contact-form textarea{
+  width:100%; box-sizing:border-box;
   padding:12px 14px; border-radius:10px; border:1px solid rgba(51,25,15,.25);
   background:rgba(255,255,255,.7); font-family:var(--font-body); font-size:14px; color:var(--mahogany);
 }
-.contact-form textarea{ min-height:120px; resize:vertical; }
+.contact-form textarea{ min-height:180px; resize:vertical; }
 .contact-form button{ justify-self:start; }
 
 /* ---------------- Footer ---------------- */
