@@ -12,9 +12,20 @@ const TIERS = [
   { name: "Platinum", blurb: "Top billing on the Durga Puja banner, souvenir magazine, and website." },
   { name: "Gold", blurb: "Featured logo placement at the main event and in the souvenir magazine." },
   { name: "Silver", blurb: "Logo listed on the website and event program." },
+  { name: "Business", blurb: "General business support, with recognition on the website." },
 ];
 
-const TIER_ORDER = ["Platinum", "Gold", "Silver"];
+// tier value stored in Sanity -> full display label. Kept separate from
+// the raw tier value because "Business Sponsors" doesn't follow the
+// same "<Tier> Member Sponsors" pattern as the other three.
+const TIER_LABELS = {
+  Platinum: "Platinum Member Sponsors",
+  Gold: "Gold Member Sponsors",
+  Silver: "Silver Member Sponsors",
+  Business: "Business Sponsors",
+};
+
+const TIER_ORDER = ["Platinum", "Gold", "Silver", "Business"];
 
 function getInitials(name) {
   return name
@@ -49,7 +60,7 @@ export default function Sponsors() {
             {TIERS.map((t) => (
               <div className="card" key={t.name}>
                 <span className="tag">Tier</span>
-                <h3>{t.name}</h3>
+                <h3>{TIER_LABELS[t.name]}</h3>
                 <p>{t.blurb}</p>
               </div>
             ))}
@@ -63,7 +74,7 @@ export default function Sponsors() {
           if (inTier.length === 0) return null;
           return (
             <section className="section" key={tierName}>
-              <span className="kicker sponsor-tier-kicker">{tierName} Sponsors</span>
+              <span className="kicker sponsor-tier-kicker">{TIER_LABELS[tierName]}</span>
               <RectAlpona tier={tierName.toLowerCase()}>
                 <div className="card-row">
                   {inTier.map((s) => (
