@@ -12,11 +12,12 @@ export default function Footer() {
       </div>
       <div>
         <h5>Quick Links</h5>
+        <p><a href="/contact">Become a Member</a></p>
         <p><a href="/events">Events Calendar</a></p>
         <p><a href="/gallery">Photo Gallery</a></p>
         <p><a href="/committee">Executive Committee</a></p>
         <p><a href="/sponsors">Become a Sponsor</a></p>
-        <p><a href="/contact">Become a Memeber</a></p>
+        
         
       </div>
       <div>
