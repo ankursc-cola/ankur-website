@@ -119,7 +119,7 @@ export default function Home() {
       </section>
 
       <section className="section">
-        <span className="kicker">This Year</span>
+        <span className="kicker">Year after Year</span>
         <h2 className="dark-text">Our Main Celebrations</h2>
         <div className="card-row reveal">
           {EVENTS.map((e) => {

@@ -16,6 +16,8 @@ export default function Footer() {
         <p><a href="/gallery">Photo Gallery</a></p>
         <p><a href="/committee">Executive Committee</a></p>
         <p><a href="/sponsors">Become a Sponsor</a></p>
+        <p><a href="/contact">Become a Memeber</a></p>
+        
       </div>
       <div>
         <h5>Get in Touch</h5>
