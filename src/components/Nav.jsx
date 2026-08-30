@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import ankurLogo from "../assets/ankur-logo.png";
+import ankurLogoLite from "../assets/ankur-logo-lite.png";
+
 
 const LINKS = [
   { to: "/", label: "Home", end: true },
@@ -19,7 +21,7 @@ export default function Nav() {
   return (
     <nav className="site-nav">
       <NavLink to="/" className="brand" onClick={() => setOpen(false)}>
-        <img src={ankurLogo} alt="Ankur logo" className="brand-mark-logo" />
+        <img src={ankurLogoLite} alt="Ankur logo" className="brand-mark-logo" />
         <span className="brand-name">Ankur | অঙ্কুর</span>
       </NavLink>
 

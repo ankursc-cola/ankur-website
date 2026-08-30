@@ -1,4 +1,5 @@
 import ankurLogo from "../assets/ankur-logo.png";
+import ankurLogoLite from "../assets/ankur-logo-lite.png";
 
 export default function Footer() {
   return (
