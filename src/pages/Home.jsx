@@ -16,6 +16,10 @@ import HoliAlpona from "../components/HoliAlpona.jsx";
 import BoiAlpona from "../components/BoiAlpona.jsx";
 import NoboAlpona from "../components/NoboAlpona.jsx";
 
+import culturalPrograms from "../assets/img/cultural-programs.png";
+import sindurKhela from "../assets/img/sindur-khela.png";
+import communityFeast from "../assets/img/community-feast.png";
+
 
 
 // The hero's "Next Event" badge is the only thing on this page that's
@@ -167,17 +171,20 @@ export default function Home() {
         </p>
         <div className="card-row reveal">
           <div className="people-card">
-            <div className="people-avatar">অ</div>
+            
+            <img className="people-avatar" src={culturalPrograms} alt="Cultural Programs" />
             <h4>Cultural Programs</h4>
             <p>Dance, music, and drama rehearsed by our own members each season.</p>
           </div>
           <div className="people-card">
-            <div className="people-avatar">সি</div>
+            
+            <img className="people-avatar" src={sindurKhela} alt="Sindur Khela" />
             <h4>Sindur Khela</h4>
             <p>Married women marking Bijoya with vermillion, laughter, and blessings.</p>
           </div>
           <div className="people-card">
-            <div className="people-avatar">খ</div>
+            
+            <img className="people-avatar" src={communityFeast} alt="Community Feast" />
             <h4>Community Feast</h4>
             <p>Bhog and community dinners that bring every generation to one table.</p>
           </div>

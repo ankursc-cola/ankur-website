@@ -27,7 +27,7 @@ const TIER_LABELS = {
 
 const TIER_ORDER = ["Platinum", "Gold", "Silver", "Business"];
 
-function getInitials(name) {
+/*function getInitials(name) {
   return name
     .split(" ")
     .filter(Boolean)
@@ -35,7 +35,7 @@ function getInitials(name) {
     .map((w) => w[0])
     .join("")
     .toUpperCase();
-}
+}*/
 
 export default function Sponsors() {
   useReveal();
@@ -85,9 +85,9 @@ export default function Sponsors() {
                           alt={s.name}
                           style={{ maxWidth: "100%", height: 60, objectFit: "contain", marginBottom: 12 }}
                         />
-                      ) : (
-                        <div className="sponsor-card-initials">{getInitials(s.name)}</div>
-                      )}
+                      /*) : (*/
+                        /*<div className="sponsor-card-initials">{getInitials(s.name)}</div>*/
+                      ): null}
                       <h3>
                         {s.website ? (
                           <a href={s.website} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
