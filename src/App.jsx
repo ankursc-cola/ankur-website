@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
 import Events from "./pages/Events.jsx";
 import Gallery from "./pages/Gallery.jsx";
+import GalleryEvent from "./pages/GalleryEvent.jsx";
 import ExecutiveCommittee from "./pages/ExecutiveCommittee.jsx";
 import Publications from "./pages/Publications.jsx";
 import Sponsors from "./pages/Sponsors.jsx";
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="/about" element={<Layout><About /></Layout>} />
         <Route path="/events" element={<Layout><Events /></Layout>} />
         <Route path="/gallery" element={<Layout><Gallery /></Layout>} />
+        <Route path="/gallery/:eventSlug" element={<Layout><GalleryEvent /></Layout>} />
         <Route path="/committee" element={<Layout><ExecutiveCommittee /></Layout>} />
         <Route path="/publications" element={<Layout><Publications /></Layout>} />
         <Route path="/sponsors" element={<Layout><Sponsors /></Layout>} />

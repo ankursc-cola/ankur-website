@@ -545,7 +545,7 @@ button{font-family:inherit;}
 .footer-bottom{ text-align:center; font-size:11.5px; color:#8a6142; margin-top:34px; padding-top:20px; border-top:1px solid rgba(252,211,77,.12); }
 @media (max-width: 720px){ .site-footer{ grid-template-columns:1fr; } }
 
-.contact-success { font-size: 15px; color: var(--vermillion); font-weight: 500; max-width: 480px; }
+.contact-success { font-size: 15px; color: var(--vermillion); font-weight: 500; }
 .contact-error { font-size: 13px; color: var(--vermillion); margin-top: 10px; }
 
 
@@ -772,4 +772,100 @@ button{font-family:inherit;}
 .lightbox-arrow-right { right: 0.5rem; }
 @media (max-width: 640px) {
   .lightbox-arrow { font-size: 2rem; padding: 0.25rem 0.5rem; }
+}
+
+/* Gallery Folder Added */
+
+.gallery-back-link {
+  color: var(--vermillion);
+  font-weight: 600;
+  text-decoration: none;
+}
+.gallery-back-link:hover { text-decoration: underline; }
+
+.gallery-folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px 24px;
+}
+
+.gallery-folder-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .25s ease;
+}
+.gallery-folder-card:hover,
+.gallery-folder-card:focus-visible,
+.gallery-folder-card:active {
+  transform: translateY(-6px);
+}
+
+.gallery-folder-tab {
+  display: block;
+  width: 52%;
+  height: 14px;
+  background: var(--vermillion);
+  border-radius: 6px 6px 0 0;
+  transition: transform .3s ease;
+  transform-origin: 0% 100%;
+}
+.gallery-folder-card:hover .gallery-folder-tab,
+.gallery-folder-card:focus-visible .gallery-folder-tab,
+.gallery-folder-card:active .gallery-folder-tab {
+  transform: rotate(-7deg);
+}
+
+.gallery-folder-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--cream);
+  border: 1px solid rgba(51,25,15,.15);
+  border-radius: 0 12px 12px 12px;
+  padding: 18px 14px 16px;
+}
+
+.gallery-folder-label {
+  font-family: "Spectral", serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--mahogany);
+  margin: 0 0 14px;
+}
+
+.gallery-folder-photo-wrap {
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(from 180deg,
+    var(--crimson), var(--vermillion), var(--orange),
+    var(--amber), var(--gold-glow), var(--crimson));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(51,25,15,.2);
+}
+.gallery-folder-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid var(--cream);
+}
+
+.gallery-folder-count {
+  font-size: 13px;
+  color: rgba(51,25,15,.65);
+  margin-top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-folder-card,
+  .gallery-folder-tab {
+    transition: none;
+  }
 }
