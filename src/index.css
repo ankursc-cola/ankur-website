@@ -317,7 +317,7 @@ button{font-family:inherit;}
 .light-text .people-card{ background:rgba(255,255,255,.06); border-color:rgba(252,211,77,.16); }
 
 .people-avatar{
-  width:76px; height:76px; border-radius:50%;
+  width:90px; height:90px; border-radius:50%;
   object-fit:cover; object-position:center;
   box-shadow:0 0 0 3px rgba(252,211,77,.55), 0 4px 14px rgba(51,25,15,.25);
 }
