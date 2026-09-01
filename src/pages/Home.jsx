@@ -78,7 +78,7 @@ export default function Home() {
         <GlowLayer />
         <RisingEmbers count={100} />
 
-        <div className="eyebrow">Bengali Association of South Carolina</div>
+        <div className="eyebrowHero">Bengali Association of South Carolina</div>
         <h1 className="headline font-bangla">অঙ্কুর</h1>
         <p className="sub">
           Ankur means sprout: a seed that refuses to forget where it came from.
