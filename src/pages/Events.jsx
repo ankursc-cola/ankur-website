@@ -30,7 +30,8 @@ export default function Events() {
       </header>
 
       <section className="section">
-        <div className="card-row reveal">
+        
+          <div className="card-row events-row reveal">
           {events.map((e) => (
           <div key={e._id} className={`card ${e.featured ? "highlight" : ""}`}>
             <span className="tag">{e.dateText}</span>

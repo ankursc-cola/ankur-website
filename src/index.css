@@ -270,8 +270,10 @@ button{font-family:inherit;}
 /* ---- decorative accent ---- */
 .section.accent-top{ border-top:1px solid rgba(252,211,77,0.3); }
 
-/* ---------------- Card row (existing .card component) ---------------- */
+/* ---------------- Card row (existing .card component for EVENTS) ---------------- */
 .card-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px; margin-top:36px; }
+/* After this is for event page only | above is for hero page only */
+.card-row.events-row{ grid-template-columns:1fr; width:100%; }
 .card{
   background:rgba(255,255,255,.5); border:1px solid rgba(51,25,15,.12);
   border-radius:14px; padding:22px; backdrop-filter:blur(2px);
