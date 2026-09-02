@@ -68,7 +68,7 @@ export default function Gallery() {
         <RisingEmbers count={35} />
         <span className="kicker">Moments</span>
         <h1>Gallery</h1>
-        <h1 className="headline font-bangla">স্মৃতিকথা</h1>
+        <h1 className="headline font-bangla">স্মৃতি-মুহূর্ত</h1>
         <p>Browse photos by event — pick a celebration below to see every year we've captured.</p>
       </header>
 

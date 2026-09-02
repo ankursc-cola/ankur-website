@@ -50,7 +50,7 @@ export default function Sponsors() {
         <RisingEmbers count={35} />
         <span className="kicker">Support Ankur</span>
         <h1>Sponsors</h1>
-        <h1 className="headline font-bangla">আমাদের সহযোগী</h1>
+        <h1 className="headline font-bangla">পৃষ্ঠপোষক</h1>
         <p>Our celebrations are made possible by generous community and business sponsors.</p>
       </header>
 

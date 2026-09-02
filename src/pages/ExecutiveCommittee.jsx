@@ -57,7 +57,7 @@ const pastTerms =
         <RisingEmbers count={35} />
         <span className="kicker">{currentTerm} Term</span>
         <h1>Executive Committee</h1>
-        <h1 className="headline font-bangla">নেতৃত্বে</h1>
+        <h1 className="headline font-bangla">নির্বাহী সমিতি</h1>
         <p>Ankur is run by a volunteer committee elected each year</p>
       </header>
 
