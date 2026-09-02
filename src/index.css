@@ -823,9 +823,9 @@ button{font-family:inherit;}
   text-align: center;
   background: linear-gradient(
     to bottom,
-    var(--orange) 0%,
-    var(--amber) 50%,
-    var(--gold-glow) 100%
+    var(--amber) 0%,
+    var(--gold-glow) 50%,
+    var(--cream) 100%
   );
   border: 1px solid rgba(51,25,15,.15);
   border-radius: 0 12px 12px 12px;
