@@ -891,3 +891,120 @@ button{font-family:inherit;}
     transition: none;
   }
 }
+
+
+/* ==========================================================================
+   Member Dashboard 
+   Only new classes: the events section reuses your existing .card /
+   .event-row / .event-thumb / .btn styles from Events.jsx, so nothing
+   needed there. Uses existing Avro Palette tokens already defined
+   elsewhere in this file.
+   ========================================================================== */
+
+.membership-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.membership-card {
+  position: relative;
+  background: var(--cream);
+  border: 2px solid var(--vermillion);
+  border-radius: 12px;
+  padding: 1.75rem;
+  text-align: center;
+}
+
+.membership-card.recommended {
+  border-color: var(--gold-glow);
+  box-shadow: 0 0 0 3px rgba(252, 211, 77, 0.35);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold-glow);
+  color: var(--mahogany);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.membership-card h3 {
+  font-family: "Spectral", serif;
+  color: var(--crimson);
+  margin: 0.5rem 0;
+}
+
+.membership-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--mahogany);
+  margin: 0.5rem 0;
+}
+
+.membership-period {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-left: 0.25rem;
+}
+
+/* Shared Zelle payment block, used for both membership dues and donations */
+.zelle-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--cream);
+  border: 1px solid var(--orange);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 560px;
+}
+
+.zelle-qr-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  padding: 0.5rem;
+  flex-shrink: 0;
+}
+
+.zelle-details {
+  flex: 1;
+  min-width: 200px;
+}
+
+.zelle-label {
+  font-weight: 700;
+  color: var(--crimson);
+  margin-bottom: 0.25rem;
+}
+
+.zelle-name {
+  font-weight: 700;
+  color: var(--mahogany);
+  margin: 0;
+}
+
+.zelle-email {
+  color: var(--mahogany);
+  opacity: 0.85;
+  margin: 0 0 0.5rem;
+}
+
+.zelle-note {
+  font-size: 0.85rem;
+  color: var(--mahogany);
+  opacity: 0.7;
+}

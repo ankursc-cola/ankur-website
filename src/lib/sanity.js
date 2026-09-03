@@ -114,7 +114,7 @@ export function fetchSponsors() {
 export function fetchEvents() {
   return safeFetch(
     `*[_type == "event"] | order(order asc) {
-      _id, name, nameBangla, dateText, blurb, featured, "flyerUrl": flyer.asset->url
+            _id, name, nameBangla, dateText, blurb, featured, "flyerUrl": flyer.asset->url, "memberFlyerUrl": memberFlyer.asset->url
     }`
   );
 }

@@ -10,6 +10,7 @@ import ExecutiveCommittee from "./pages/ExecutiveCommittee.jsx";
 import Publications from "./pages/Publications.jsx";
 import Sponsors from "./pages/Sponsors.jsx";
 import Contact from "./pages/Contact.jsx";
+import MemberDashboard from "./pages/MemberDashboard.jsx";
 
 function Layout({ children }) {
   return (
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/publications" element={<Layout><Publications /></Layout>} />
         <Route path="/sponsors" element={<Layout><Sponsors /></Layout>} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
+        <Route path="/members" element={<Layout><MemberDashboard /></Layout>} />
       </Routes>
     </BrowserRouter>
   );

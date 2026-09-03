@@ -37,7 +37,7 @@ const FALLBACK_FEATURED_EVENT = {
 // all. Only WHICH ONE is highlighted changes, driven by comparing
 // each card's name against the Sanity-fetched featuredEvent below.
 // If you add/rename/remove a festival, edit this array directly.
-const EVENTS = [
+export const EVENTS = [
   { _id: "e1", name: "Saraswati Puja", blurb: "Honoring the goddess of knowledge and the arts, welcomed with our children in their new clothes." },
   { _id: "e2", name: "Holi", blurb: "Colors, music, and spring joy shared across the whole community." },
   { _id: "e21", name: "Poila Boishak", blurb: "Bengali new year food, music, and spring joy shared across the whole community." },

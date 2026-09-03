@@ -11,8 +11,10 @@ const LINKS = [
   { to: "/gallery", label: "Gallery" },
   { to: "/committee", label: "Executive Committee" },
   { to: "/publications", label: "Publications" },
+    { to: "/members", label: "Members Dashboard" },
   { to: "/sponsors", label: "Sponsors" },
   { to: "/contact", label: "Contact" },
+
 ];
 
 export default function Nav() {
