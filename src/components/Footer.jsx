@@ -12,7 +12,7 @@ export default function Footer() {
       </div>
       <div>
         <h5>Quick Links</h5>
-        <p><a href="/contact">Become a Member</a></p>
+        <p><a href="/members">Become a Member</a></p>
         <p><a href="/events">Events Calendar</a></p>
         <p><a href="/gallery">Photo Gallery</a></p>
         <p><a href="/committee">Executive Committee</a></p>
