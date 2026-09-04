@@ -43,7 +43,7 @@ const MEMBERSHIP_TIERS = [
     description: "Includes admission to every Ankur event for the full year.",
     recommended: true,
   },
-    {
+  {
     id: "annual",
     title: "Student Annual Membership",
     price: "$150",
