@@ -312,7 +312,7 @@ export default function MemberDashboard() {
 
 
       <section className="section">
-        <span className="kicker">Become a Sponsor</span>
+        <span className="kicker">Become a Member Sponsor</span>
         <h2 className="dark-text">Sponsorship Levels</h2>
         <p style={{ opacity: 0.85, marginBottom: "1.5rem", maxWidth: 720 }}>
           Sponsors help make every Ankur event possible. Choose a tier below,
