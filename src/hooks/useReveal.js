@@ -4,13 +4,13 @@ import { useEffect } from "react";
 export default function useReveal(deps = []) {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal:not(.in)");
-    const io = new IntersectionObserver(
+      const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) entry.target.classList.add("in");
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0 }
     );
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
