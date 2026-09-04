@@ -5,8 +5,8 @@ import useSanityData from "../hooks/useSanityData.js";
 import { fetchPublications, urlFor } from "../lib/sanity.js";
 
 const FALLBACK_ISSUES = [
-  { _id: "f1", year: "2025", title: "Durga Puja Souvenir Magazine", blurb: "Our annual keepsake — member writing, art, and event highlights.", pdfUrl: null, coverImage: null },
-  { _id: "f2", year: "2024", title: "Durga Puja Souvenir Magazine", blurb: "Last year's edition, archived here for the community.", pdfUrl: null, coverImage: null },
+  { _id: "f1", year: "2025", title: "Durga Puja Souvenir", blurb: "Our annual keepsake — member writing, art, and event highlights.", pdfUrl: null, coverImage: null },
+  { _id: "f2", year: "2024", title: "Durga Puja Souvenir", blurb: "Last year's edition, archived here for the community.", pdfUrl: null, coverImage: null },
 ];
 
 export default function Publications() {
