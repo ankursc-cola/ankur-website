@@ -142,7 +142,7 @@ export default function MemberDashboard() {
 
       <section className="section">
         <span className="kicker">For Members</span>
-        <h2 className="dark-text">Events</h2>
+        <h2 className="dark-text">Events Included in Membership</h2>
         <p style={{ opacity: 0.85, marginBottom: "1.5rem" }}>
           Download the member flyer for any event below, if one's been posted.
         </p>
