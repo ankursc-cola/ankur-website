@@ -41,7 +41,7 @@ export default function Events() {
                   {e.nameBangla}
                 </p>
               )}
-              <div className="event-row">
+              {/* <div className="event-row">
                 <div className="event-content">
                   <p>{e.blurb}</p>
                   {e.flyerUrl && (
@@ -64,6 +64,29 @@ export default function Events() {
                   alt={e.name}
                   loading="lazy"
                 />
+              </div> */}
+
+              <div className="event-row">
+                <p className="event-text">{e.blurb}</p>
+                <img
+                  className="event-thumb"
+                  src={getEventImage(e.name)}
+                  alt={e.name}
+                  loading="lazy"
+                />
+                {e.flyerUrl && (
+                  <p className="event-actions">
+                      <a
+                      href={e.flyerUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-ghost"
+                      style={{ borderColor: "var(--vermillion)", color: "var(--vermillion)" }}
+                    >
+                      Download Flyer →
+                    </a>
+                  </p>
+                )}
               </div>
             </div>
           ))}
