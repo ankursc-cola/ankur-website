@@ -28,7 +28,7 @@ const MEMBERSHIP_TIERS = [
   {
     id: "annual",
     title: "Annual Membership",
-    price: "$250",
+    price: "$200",
     period: "/ year",
     for:"/ individual",
     description: "Includes admission to every Ankur event for the full year.",
@@ -37,7 +37,7 @@ const MEMBERSHIP_TIERS = [
    {
     id: "annual",
     title: "Student Family Annual Membership",
-    price: "$200",
+    price: "$300",
     period: "/ year",
     for:"/ family",
     description: "Includes admission to every Ankur event for the full year.",
@@ -46,13 +46,13 @@ const MEMBERSHIP_TIERS = [
     {
     id: "annual",
     title: "Student Annual Membership",
-    price: "$100",
+    price: "$150",
     period: "/ year",
     for:"/ individual",
     description: "Includes admission to every Ankur event for the full year.",
     recommended: true,
   },
-  {
+  /*{
     id: "per-event",
     title: "Per-Event Participation Fee",
     price: "$150",
@@ -60,7 +60,7 @@ const MEMBERSHIP_TIERS = [
     for:"/ family",
     description: "Covers a single event of your choice.",
     recommended: false,
-  },
+  },*/
 
 ];
 
