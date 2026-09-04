@@ -157,6 +157,25 @@ export default function About() {
           >
             Become a Member
           </Link>
+          <a
+          
+            href="https://www.facebook.com/groups/239252402772665/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost"
+            style={{
+              borderColor: "var(--vermillion)",
+              color: "var(--vermillion)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+              <path d="M22 12.06C22 6.51 17.52 2 12 2S2 6.51 2 12.06C2 17.06 5.66 21.2 10.44 21.95V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.95C18.34 21.2 22 17.06 22 12.06Z" />
+            </svg>
+            Follow Us on Facebook
+          </a>
         </div>
       </section>
     </>

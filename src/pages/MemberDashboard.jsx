@@ -310,6 +310,46 @@ export default function MemberDashboard() {
       </section>
 
 
+
+      <section className="section">
+        <span className="kicker">Become a Sponsor</span>
+        <h2 className="dark-text">Sponsorship Levels</h2>
+        <p style={{ opacity: 0.85, marginBottom: "1.5rem", maxWidth: 720 }}>
+          Sponsors help make every Ankur event possible. Choose a tier below,
+          then pay using the Zelle details below.
+        </p>
+
+        <div className="sponsor-cards">
+          <div className="sponsor-card tier-platinum">
+            <div className="sponsor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor">
+                <path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01z" />
+              </svg>
+            </div>
+            <h3>Platinum</h3>
+            <p className="sponsor-price">$1,000</p>
+          </div>
+          <div className="sponsor-card tier-gold">
+            <div className="sponsor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor">
+                <path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01z" />
+              </svg>
+            </div>
+            <h3>Gold</h3>
+            <p className="sponsor-price">$750</p>
+          </div>
+          <div className="sponsor-card tier-silver">
+            <div className="sponsor-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor">
+                <path d="M12 2l2.9 6.26L21 9.27l-4.5 4.38L17.8 21 12 17.77 6.2 21l1.3-7.35L3 9.27l6.1-1.01z" />
+              </svg>
+            </div>
+            <h3>Silver</h3>
+            <p className="sponsor-price">$500</p>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
         <span className="kicker">Give Back</span>
         <h2 className="dark-text">Support Ankur</h2>

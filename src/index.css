@@ -1131,3 +1131,154 @@ button{font-family:inherit;}
   }
 }
 
+/* ==========================================================================
+   Sponsorship Levels cards (v3) — replaces the earlier sponsor-cards.css
+   block in src/index.css. Bigger, to match .membership-card sizing.
+   Platinum gets an actual metallic shimmer fill (a deliberate, one-off
+   departure from the warm Avro tones, since "shiny platinum" specifically
+   calls for a cool metallic look — kept warm-toned/champagne rather than
+   stark grey so it still sits comfortably next to the rest of the palette).
+   ========================================================================== */
+ 
+.sponsor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 1rem;
+  max-width: 900px;
+}
+ 
+.sponsor-card {
+  position: relative;
+  background: var(--cream);
+  border-radius: 20px;
+  padding: 2.5rem 2rem 2.25rem;
+  text-align: center;
+  overflow: hidden;
+  border: 1px solid rgba(51, 25, 15, 0.08);
+  box-shadow: 0 4px 14px rgba(51, 25, 15, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+ 
+.sponsor-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+}
+ 
+.sponsor-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(51, 25, 15, 0.16);
+}
+ 
+.sponsor-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+ 
+.sponsor-card h3 {
+  font-family: "Spectral", serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem;
+}
+ 
+.sponsor-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+ 
+/* Platinum — shiny metallic shimmer fill */
+.sponsor-card.tier-platinum {
+  background: linear-gradient(
+    120deg,
+    #e7e2d8 25%,
+    #fdfaf3 37%,
+    #d9d3c6 50%,
+    #fdfaf3 63%,
+    #e7e2d8 75%
+  );
+  background-size: 400% 100%;
+  animation: platinum-shimmer 6s ease-in-out infinite;
+  border: 1px solid rgba(51, 25, 15, 0.15);
+}
+.sponsor-card.tier-platinum::before {
+  background: linear-gradient(90deg, var(--mahogany), var(--crimson));
+}
+.sponsor-card.tier-platinum .sponsor-icon {
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--mahogany);
+  box-shadow: inset 0 0 0 1px rgba(51, 25, 15, 0.15);
+}
+.sponsor-card.tier-platinum h3 {
+  color: var(--mahogany);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+.sponsor-card.tier-platinum .sponsor-price {
+  color: var(--mahogany);
+}
+ 
+@keyframes platinum-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+ 
+/* Gold */
+.sponsor-card.tier-gold {
+  background: linear-gradient(160deg, rgba(252, 211, 77, 0.2), var(--cream) 60%);
+}
+.sponsor-card.tier-gold::before {
+  background: linear-gradient(90deg, var(--gold-glow), var(--amber));
+}
+.sponsor-card.tier-gold .sponsor-icon {
+  background: rgba(252, 211, 77, 0.28);
+  color: var(--crimson);
+}
+.sponsor-card.tier-gold h3 {
+  color: var(--crimson);
+}
+.sponsor-card.tier-gold .sponsor-price {
+  color: var(--mahogany);
+}
+ 
+/* Silver */
+.sponsor-card.tier-silver::before {
+  background: linear-gradient(90deg, var(--vermillion), var(--orange));
+}
+.sponsor-card.tier-silver .sponsor-icon {
+  background: rgba(198, 56, 34, 0.1);
+  color: var(--vermillion);
+}
+.sponsor-card.tier-silver h3 {
+  color: var(--vermillion);
+}
+.sponsor-card.tier-silver .sponsor-price {
+  color: var(--mahogany);
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-card,
+  .sponsor-card.tier-platinum {
+    transition: none;
+    animation: none;
+  }
+}
+ 
