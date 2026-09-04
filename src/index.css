@@ -654,7 +654,7 @@ button{font-family:inherit;}
 }
  
 .pub-card {
-  width: 480px;
+  width: 420px;
   flex: 0 0 auto; /* never shrinks, never grows — fixed dimension always */
   box-sizing: border-box;
 }
