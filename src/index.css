@@ -291,18 +291,13 @@ button{font-family:inherit;}
 
 .event-row{ display:flex; gap:20px; align-items:flex-start; }
 .event-content{ flex:1; min-width:0; }
-/* After */
+
+
 .event-thumb{
   width: 150px; flex-shrink:0;
   aspect-ratio:1/1; object-fit:cover;
   border-radius:10px;
 }
-@media (max-width: 640px){
-  .event-row{ flex-direction:column; }
-  .event-thumb{ width:100%; aspect-ratio:16/9; }
-}
-
-
 
 .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
 .reveal.in{ opacity:1; transform:translateY(0); }
