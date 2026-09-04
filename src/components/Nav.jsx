@@ -11,7 +11,7 @@ const LINKS = [
   { to: "/gallery", label: "Gallery" },
   { to: "/committee", label: "Executive Committee" },
   { to: "/publications", label: "Publications" },
-    { to: "/members", label: "Members Dashboard" },
+    { to: "/members", label: "Member Dashboard" },
   { to: "/sponsors", label: "Sponsors" },
   { to: "/contact", label: "Contact" },
 
