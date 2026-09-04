@@ -118,6 +118,7 @@ export default function MemberDashboard() {
         <RisingEmbers count={35} />
         <span className="kicker">Members Only</span>
         <h1>Member Dashboard</h1>
+         <h1 className="headline font-bangla">সদস্য তথ্যফলক</h1>
         <p>Event flyers, membership dues, and ways to support Ankur.</p>
       </header>
 
