@@ -22,7 +22,7 @@ export default function About() {
       <section className="section dark-text">
         <span className="kicker">Our Story</span>
         <h2 className="dark-text">A Community Built by Its Members</h2>
-        <p className="lead">
+        <p>
           From a handful of families gathering for Saraswati Puja to a full calendar of
           festivals culminating in our main Sarbojanin Durgotsav each October, Ankur has
           grown into a home away from home for Bengali families in South Carolina.
@@ -131,7 +131,7 @@ export default function About() {
       <section className="section dark-text">
         <span className="kicker">Join Us</span>
         <h2 className="dark-text">Get Involved</h2>
-        <p className="lead">
+        <p>
           Whether you just moved to Columbia last month or you've been part of this
           community since before Ankur had a name, whether you grew up with these
           festivals or you're curious what a real Durga Pujo pandal looks like from the
