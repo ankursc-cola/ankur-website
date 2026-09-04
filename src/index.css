@@ -654,34 +654,11 @@ button{font-family:inherit;}
 }
  
 .pub-card {
-  width: 480px;
+  width: 420px;
   flex: 0 0 auto; /* never shrinks, never grows — fixed dimension always */
   box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-  .pub-card {
-    width: 100%;
-    flex: 1 1 100%; /* on mobile, card fills the row instead of a fixed 480px */
-  }
-}
-
-@media (max-width: 420px) {
-  .pub-row {
-    flex-direction: column; /* stack cover image above text on very narrow phones */
-  }
-
-  .pub-thumb {
-    width: 90px;
-    align-self: flex-start;
-  }
-}
-
-@media (max-width: 420px) {
-  .pub-blurb {
-    white-space: normal;
-  }
-}
  
 .pub-row {
   display: flex;
