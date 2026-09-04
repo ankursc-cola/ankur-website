@@ -325,6 +325,7 @@ button{font-family:inherit;}
    background, same reasoning as .people-avatar below. */
 .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; margin-top:30px; }
 .gallery-grid.compact{ grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); }
+
 .gallery-item{
   position:relative; overflow:hidden; border-radius:12px; aspect-ratio:4/3;
   box-shadow:0 10px 24px rgba(51,25,15,.2);
@@ -1022,3 +1023,111 @@ button{font-family:inherit;}
   color: var(--mahogany);
   opacity: 0.7;
 }
+
+/* ==========================================================================
+   Rate Card — append to the end of src/index.css, after the earlier
+   Member Dashboard CSS block. Uses existing Avro Palette tokens.
+   ========================================================================== */
+
+.rate-card-wrap {
+  max-width: 820px;
+}
+
+.rate-card-title {
+  font-family: "Spectral", serif;
+  color: var(--mahogany);
+  margin-bottom: 0.75rem;
+}
+
+.rate-card-table-scroll {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--orange);
+}
+
+.rate-card-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--cream);
+  min-width: 480px;
+}
+
+.rate-card-table thead tr {
+  background: linear-gradient(90deg, var(--vermillion), var(--orange));
+}
+
+.rate-card-table th {
+  color: #fff;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.rate-card-table td {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(51, 25, 15, 0.1);
+  color: var(--mahogany);
+}
+
+.rate-card-table tbody tr:nth-child(even) {
+  background: rgba(51, 25, 15, 0.03);
+}
+
+.rate-card-table .recommended-row {
+  background: rgba(252, 211, 77, 0.25) !important;
+  box-shadow: inset 3px 0 0 var(--gold-glow);
+}
+
+.rate-card-table .recommended-row td {
+  font-weight: 600;
+}
+
+.best-value-tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  background: var(--gold-glow);
+  color: var(--mahogany);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+.rate-card-footnote {
+  font-size: 0.85rem;
+  color: var(--mahogany);
+  opacity: 0.7;
+  margin-top: 0.75rem;
+}
+
+.rate-card-cultural-fee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--cream);
+  border: 1px solid var(--orange);
+  border-radius: 10px;
+  padding: 0.85rem 1.25rem;
+  margin-top: 1.5rem;
+  max-width: 480px;
+  color: var(--mahogany);
+}
+
+.rate-card-cultural-fee strong {
+  color: var(--crimson);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .rate-card-cultural-fee {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+

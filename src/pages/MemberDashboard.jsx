@@ -52,7 +52,7 @@ const MEMBERSHIP_TIERS = [
     description: "Includes admission to every Ankur event for the full year.",
     recommended: true,
   },
-  /*{
+  {
     id: "per-event",
     title: "Per-Event Participation Fee",
     price: "$150",
@@ -60,7 +60,7 @@ const MEMBERSHIP_TIERS = [
     for:"/ family",
     description: "Covers a single event of your choice.",
     recommended: false,
-  },*/
+  },
 
 ];
 
@@ -205,6 +205,110 @@ export default function MemberDashboard() {
 
         <ZelleBlock label="Pay membership dues with Zelle" />
       </section>
+
+      
+      <section className="section">
+        <span className="kicker">Full Rate Card</span>
+        <h2 className="dark-text">Membership, Donation &amp; Entry Fees  2026 - 2027</h2>
+        <p style={{ opacity: 0.85, marginBottom: "1.5rem", maxWidth: 720 }}>
+          Here's the complete breakdown — and why the <strong>Member Family</strong> plan
+          is our recommended option. At $400, it bundles your full year of membership{" "}
+          <em>and</em> your Durga Puja donation into a single payment — less than a
+          non-member family would pay just to attend one weekend of Durga Puja on its own.
+        </p>
+
+        <div className="rate-card-wrap">
+          <h3 className="rate-card-title">Ankur Members</h3>
+          <div className="rate-card-table-scroll">
+            <table className="rate-card-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Membership</th>
+                  <th>Durga Puja Donation</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="recommended-row">
+                  <td>
+                    Member Family
+                    <span className="best-value-tag">Best Value</span>
+                  </td>
+                  <td>$250</td>
+                  <td>$150</td>
+                  <td>$400</td>
+                </tr>
+                <tr>
+                  <td>Member Single</td>
+                  <td>$100</td>
+                  <td>$100</td>
+                  <td>$200</td>
+                </tr>
+                <tr>
+                  <td>Member Student Family</td>
+                  <td>$200</td>
+                  <td>$100</td>
+                  <td>$300</td>
+                </tr>
+                <tr>
+                  <td>Member Student Single</td>
+                  <td>$75</td>
+                  <td>$75</td>
+                  <td>$150</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 className="rate-card-title" style={{ marginTop: "2.5rem" }}>
+            Durga Puja — Non-Members
+          </h3>
+          <div className="rate-card-table-scroll">
+            <table className="rate-card-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>2 Days</th>
+                  <th>1 Day</th>
+                  <th>Saturday Morning</th>
+                  <th>Saturday Evening</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Non-Member Entry Per Adult*</td>
+                  <td>$150</td>
+                  <td>$100</td>
+                  <td>$50</td>
+                  <td>$50</td>
+                </tr>
+                <tr>
+                  <td>Non-Member Student Entry Per Adult*</td>
+                  <td>$100</td>
+                  <td>$75</td>
+                  <td>$40</td>
+                  <td>$40</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="rate-card-footnote">
+            * Children under 13 years old, when accompanied by an adult, can enter free of charge.
+          </p>
+
+          <div className="rate-card-cultural-fee">
+            <span>Cultural Program Participation Fee for Non-Members^</span>
+            <strong>$30</strong>
+          </div>
+          <p className="rate-card-footnote">
+            ^ This is in addition to the entry fee. The entry fee must be paid to
+            participate in the cultural program.
+          </p>
+        </div>
+      </section>
+
 
       <section className="section">
         <span className="kicker">Give Back</span>
