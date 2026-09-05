@@ -6,6 +6,8 @@ import useSanityData from "../hooks/useSanityData.js";
 import { fetchGalleryPhotos, urlFor, EVENT_OPTIONS } from "../lib/sanity.js";
 import GalleryFolderCard from "../components/GalleryFolderCard.jsx";
 
+import { Helmet } from 'react-helmet-async';
+
 // Fallback photos (used if Sanity is unreachable) — all tagged to the
 // same event since they're all from past Durga Puja celebrations.
 import pandalWide1 from "../assets/img/pandal-wide-1.jpg";
@@ -63,6 +65,10 @@ export default function Gallery() {
 
   return (
     <>
+          <Helmet>
+              <title>Photo Gallery | Ankur Bengali Association SC</title>
+              <meta name="description" content="Photos from Ankur's Bengali cultural events across South Carolina." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

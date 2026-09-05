@@ -8,6 +8,8 @@ import { EVENTS } from "./Home.jsx";
 import { EVENT_IMAGE_RULES } from "../lib/eventImages.js";
 import zelleQR from "../assets/zelle-qr.png";
 
+import { Helmet } from 'react-helmet-async';
+
 // ---------------------------------------------------------------------------
 // TODO (auth): This page is intentionally open for now. When real member
 // login exists, gate it — e.g. wrap the returned JSX in <RequireAuth> or
@@ -131,6 +133,10 @@ export default function MemberDashboard() {
 
   return (
     <>
+          <Helmet>
+              <title> Our Members | Ankur Bengali Association SC</title>
+              <meta name="description" content="Ankur is the Bengali cultural association of South Carolina, hosting Durga Puja, Poila Boishakh, and community events for Bengalis across SC." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

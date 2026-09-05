@@ -21,6 +21,8 @@ import pujaRitual from "../assets/img/puja-ritual.jpg";
 import deviDetail from "../assets/img/devi-detail.jpg";
 import durgaStage from "../assets/img/durga-puja-stage.jpg";
 
+import { Helmet } from 'react-helmet-async';
+
 const FALLBACK_PHOTOS = [
   { _id: "f1", url: pandalWide1, caption: "The pandal, full view", year: "2025", event: "durga-puja" },
   { _id: "f2", url: idols1, caption: "Durga and family, evening light", year: "2025", event: "durga-puja" },
@@ -116,6 +118,10 @@ export default function GalleryEvent() {
 
   return (
     <>
+          <Helmet>
+              <title>Photo Gallery | Ankur Bengali Association SC</title>
+              <meta name="description" content="Photos from Ankur's Bengali cultural events across South Carolina." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

@@ -5,6 +5,8 @@ import useSanityData from "../hooks/useSanityData.js";
 import { fetchCommittee, urlFor } from "../lib/sanity.js";
 import { useState } from "react";
 
+import { Helmet } from 'react-helmet-async';
+
 // Shown only if Sanity has no committee members yet, or isn't reachable.
 // Every entry needs a "term" now, since the page groups by it.
 const FALLBACK_COMMITTEE = [
@@ -52,6 +54,10 @@ const pastTerms =
 
   return (
     <>
+          <Helmet>
+              <title>Executive Committee | Ankur Bengali Association SC</title>
+              <meta name="description" content="Meet the volunteer leadership of Ankur, the Bengali Association of South Carolina." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

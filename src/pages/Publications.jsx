@@ -4,6 +4,8 @@ import RisingEmbers from "../components/RisingEmbers.jsx";
 import useSanityData from "../hooks/useSanityData.js";
 import { fetchPublications, urlFor } from "../lib/sanity.js";
 
+import { Helmet } from 'react-helmet-async';
+
 const FALLBACK_ISSUES = [
   { _id: "f1", year: "2025", title: "Durga Puja Souvenir", blurb: "Our annual keepsake — member writing, art, and event highlights.", pdfUrl: null, coverImage: null },
   { _id: "f2", year: "2024", title: "Durga Puja Souvenir", blurb: "Last year's edition, archived here for the community.", pdfUrl: null, coverImage: null },
@@ -15,6 +17,10 @@ export default function Publications() {
 
   return (
     <>
+          <Helmet>
+              <title>Publications | Ankur Bengali Association SC</title>
+              <meta name="description" content="Ankur's community publications and newsletters for the Bengali community in South Carolina." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

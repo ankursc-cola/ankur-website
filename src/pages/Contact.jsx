@@ -2,6 +2,8 @@ import { useState } from "react";
 import GlowLayer from "../components/GlowLayer.jsx";
 import RisingEmbers from "../components/RisingEmbers.jsx";
 
+import { Helmet } from 'react-helmet-async';
+
 // formspree unique form id 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mvkpeqez";
 
@@ -35,6 +37,10 @@ export default function Contact() {
 
   return (
     <>
+          <Helmet>
+              <title>Contact Us | Ankur Bengali Association SC</title>
+              <meta name="description" content="Get in touch with Ankur, the Bengali Association of South Carolina." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

@@ -20,7 +20,7 @@ import culturalPrograms from "../assets/img/cultural-programs.png";
 import sindurKhela from "../assets/img/sindur-khela.png";
 import communityFeast from "../assets/img/community-feast.png";
 
-
+import { Helmet } from 'react-helmet-async';
 
 // The hero's "Next Event" badge is the only thing on this page that's
 // dynamic (pulled from Sanity's featured event). If Sanity has no
@@ -74,6 +74,10 @@ export default function Home() {
 
   return (
     <>
+      <Helmet>
+          <title>Ankur — Bengali Association of South Carolina</title>
+          <meta name="description" content="Ankur is the Bengali cultural association of South Carolina, hosting Durga Puja, Poila Boishakh, and community events for Bengalis across SC." />
+      </Helmet>
       <section className="hero">
         <GlowLayer />
         <RisingEmbers count={100} />

@@ -4,10 +4,16 @@ import useReveal from "../hooks/useReveal.js";
 import ankurLogo from "../assets/ankur-logo.png";
 import RisingEmbers from "../components/RisingEmbers.jsx";
 
+import { Helmet } from 'react-helmet-async';
+
 export default function About() {
   useReveal();
   return (
     <>
+          <Helmet>
+              <title>About Us | Ankur Bengali Association of South Carolina</title>
+              <meta name="description" content="Learn about Ankur, the nonprofit serving the Bengali community across South Carolina." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

@@ -5,6 +5,8 @@ import useSanityData from "../hooks/useSanityData.js";
 import { fetchEvents } from "../lib/sanity.js";
 import { getEventImage } from "../lib/eventImages.js";
 
+import { Helmet } from 'react-helmet-async';
+
 export const FALLBACK_EVENTS = [
   { _id: "f1", name: "Saraswati Puja", dateText: "Winter / Early Spring", blurb: "Honoring the goddess of knowledge and the arts, welcomed with our children in their new clothes.", featured: false },
   { _id: "f2", name: "Holi", dateText: "Spring", blurb: "Colors, music, and spring joy shared across the whole community.", featured: false },
@@ -21,6 +23,30 @@ export default function Events() {
 
     return (
     <>
+          <Helmet>
+              <title>Upcoming Events | Ankur Bengali Association SC</title>
+              <meta name="description" content="See upcoming Bengali cultural celebrations in South Carolina — Durga Puja, Holi, Poila Boishakh, and more." />
+              <script type="application/ld+json">
+                {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@graph": events.map(e => ({
+                    "@type": "Event",
+                    "name": e.name,
+                    "description": e.blurb,
+                    "startDate": e.dateText,
+                    "location": {
+                      "@type": "Place",
+                      "name": "South Carolina"
+                    },
+                    "organizer": {
+                      "@type": "Organization",
+                      "name": "Ankur - Bengali Association of South Carolina",
+                      "url": "https://ankursc.org"
+                    }
+                  }))
+                })}
+              </script>
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />

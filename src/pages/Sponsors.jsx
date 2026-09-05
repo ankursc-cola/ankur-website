@@ -5,6 +5,8 @@ import useSanityData from "../hooks/useSanityData.js";
 import { fetchSponsors, urlFor } from "../lib/sanity.js";
 import RectAlpona from "../components/RectAlpona.jsx";
 
+import { Helmet } from 'react-helmet-async';
+
 // Shown when there are no real sponsors in Sanity yet — same
 // tier-description content as the original page, so this still looks
 // complete before anyone's actually added a sponsor.
@@ -45,6 +47,10 @@ export default function Sponsors() {
 
   return (
     <>
+          <Helmet>
+              <title>Our Sponsors | Ankur Bengali Association SC</title>
+              <meta name="description" content="Businesses and organizations supporting Ankur's Bengali cultural programming in South Carolina." />
+          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />
