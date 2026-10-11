@@ -301,7 +301,7 @@ export default function MemberDashboard() {
           </div>
 
           <p className="rate-card-footnote">
-            * Children under 13 years old, when accompanied by an adult, can enter free of charge.
+            * Children under 18 years old, when accompanied by an adult, can enter free of charge.
           </p>
 
           <div className="rate-card-cultural-fee">
