@@ -1,10 +1,17 @@
+import { lazy, Suspense, useCallback, useRef, useState } from "react";
 import GlowLayer from "../components/GlowLayer.jsx";
 import useReveal from "../hooks/useReveal.js";
 import RisingEmbers from "../components/RisingEmbers.jsx";
 import useSanityData from "../hooks/useSanityData.js";
 import { fetchPublications, urlFor } from "../lib/sanity.js";
+// Styles are tiny (~3 KB) so they load with the page. That way the "Opening…" fallback
+// below is already styled while the heavy viewer code is still downloading.
+import "../components/FlipbookViewer.css";
 
-import { Helmet } from 'react-helmet-async';
+// The flipbook pulls in pdf.js + the page-flip engine (~1 MB). `lazy` means that code is
+// only downloaded when someone actually clicks "Read the Magazine", so the rest of
+// the site stays exactly as fast as before.
+const FlipbookViewer = lazy(() => import("../components/FlipbookViewer.jsx"));
 
 const FALLBACK_ISSUES = [
   { _id: "f1", year: "2025", title: "Durga Puja Souvenir", blurb: "Our annual keepsake — member writing, art, and event highlights.", pdfUrl: null, coverImage: null },
@@ -15,12 +22,21 @@ export default function Publications() {
   useReveal();
   const { data: issues } = useSanityData(fetchPublications, FALLBACK_ISSUES);
 
+  const [openIssue, setOpenIssue] = useState(null);
+  const triggerRef = useRef(null); // the button that opened the viewer, so focus can return to it
+
+  const openViewer = (issue, e) => {
+    triggerRef.current = e.currentTarget;
+    setOpenIssue(issue);
+  };
+
+  const closeViewer = useCallback(() => {
+    setOpenIssue(null);
+    triggerRef.current?.focus();
+  }, []);
+
   return (
     <>
-          <Helmet>
-              <title>Publications | Ankur Bengali Association SC</title>
-              <meta name="description" content="Ankur's community publications and newsletters for the Bengali community in South Carolina." />
-          </Helmet>
       <header className="page-header">
         <GlowLayer />
         <RisingEmbers count={35} />
@@ -49,14 +65,13 @@ export default function Publications() {
                   <h3 className="pub-title">{i.title}</h3>
                   <p className="pub-blurb">{i.blurb}</p>
                   {i.pdfUrl && (
-                    <a
-                      href={i.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
                       className="btn btn-ghost pub-pdf-btn"
+                      onClick={(e) => openViewer(i, e)}
                     >
-                      Read the PDF →
-                    </a>
+                      Read the Magazine →
+                    </button>
                   )}
                 </div>
               </div>
@@ -64,6 +79,28 @@ export default function Publications() {
           ))}
         </div>
       </section>
+
+      {/* The viewer lives OUTSIDE the .reveal row on purpose. useReveal scans for
+          .reveal elements once on mount, so anything conditionally mounted inside one
+          would stay invisible. This modal is never inside a reveal element. */}
+      {openIssue && (
+        <Suspense
+          fallback={
+            <div className="flip-overlay">
+              <div className="flip-stage">
+                <div className="flip-message"><p>Opening the magazine…</p></div>
+              </div>
+            </div>
+          }
+        >
+          <FlipbookViewer
+            pdfUrl={openIssue.pdfUrl}
+            title={openIssue.title}
+            year={openIssue.year}
+            onClose={closeViewer}
+          />
+        </Suspense>
+      )}
     </>
   );
 }

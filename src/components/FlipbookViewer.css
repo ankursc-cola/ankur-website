@@ -1,0 +1,148 @@
+/* ───────── Flipbook magazine viewer ─────────
+   Uses the Avro palette tokens from index.css (--mahogany, --cream, --amber, ...). */
+
+.flip-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  background: var(--mahogany, #33190f); /* fully opaque so the page behind never ghosts through */
+  color: var(--cream, #fdf3e2);
+  overscroll-behavior: contain;
+}
+
+.flip-toolbar {
+  flex: 0 0 52px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px 0 16px;
+  border-bottom: 1px solid rgba(253, 243, 226, 0.15);
+}
+
+.flip-title {
+  flex: 1;
+  min-width: 0;
+  font-family: "Spectral", serif;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flip-download {
+  color: var(--gold-glow, #fcd34d);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-decoration: none;
+  border: 1px solid rgba(252, 211, 77, 0.5);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.flip-download:hover { background: rgba(252, 211, 77, 0.15); }
+
+.flip-close {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--cream, #fdf3e2);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.flip-close:hover { background: rgba(253, 243, 226, 0.15); }
+
+/* The stage fills the space between toolbar and footer and centres the book. */
+.flip-stage {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  touch-action: none; /* we own swipes here: stop the browser hijacking them */
+}
+
+.flip-document {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flip-message {
+  text-align: center;
+  padding: 24px;
+}
+.flip-message p { margin: 0 0 16px; font-size: 1.1rem; }
+.flip-message .btn { border-color: var(--gold-glow, #fcd34d); color: var(--gold-glow, #fcd34d); }
+
+/* Pages */
+.flip-page {
+  background: #fff;
+  overflow: hidden;
+}
+.flip-page canvas { display: block; }
+
+.flip-page-ph {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream, #fdf3e2);
+  color: rgba(51, 25, 15, 0.35);
+  font-family: "Spectral", serif;
+  font-size: 2rem;
+}
+
+/* Footer controls */
+.flip-footer {
+  flex: 0 0 64px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border-top: 1px solid rgba(253, 243, 226, 0.15);
+}
+
+.flip-nav {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(253, 243, 226, 0.35);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--cream, #fdf3e2);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.flip-nav:hover:not(:disabled) { background: rgba(253, 243, 226, 0.15); }
+.flip-nav:disabled { opacity: 0.3; cursor: default; }
+
+.flip-slider {
+  flex: 1;
+  min-width: 0;
+  accent-color: var(--amber, #f5a623);
+}
+
+.flip-count {
+  flex: 0 0 auto;
+  min-width: 7.5em;
+  text-align: right;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Phones: tighter chrome, hide the long counter text's min-width */
+@media (max-width: 600px) {
+  .flip-title { font-size: 0.95rem; }
+  .flip-download { padding: 5px 10px; font-size: 0.8rem; }
+  .flip-count { min-width: 0; font-size: 0.75rem; }
+  .flip-footer { gap: 8px; padding: 0 8px; }
+}
